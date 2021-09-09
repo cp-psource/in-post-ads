@@ -307,7 +307,7 @@ class Wdca_CustomAd {
 		);
 		echo '<script type="text/javascript">var _wdca=' . json_encode($wdca_data) . ';</script>';
 
-		define('WDCA_FLAG_JAVASCRIPT_LOADED', true, true);
+		define('WDCA_FLAG_JAVASCRIPT_LOADED', true);
 	}
 
 	public function include_frontend_stylesheet () {
@@ -327,7 +327,7 @@ class Wdca_CustomAd {
 			if (empty($stylesheet_type)) wp_enqueue_style('wdca-theme', WDCA_PLUGIN_URL . "/css/wdca-{$theme}.css");
 			else if ('dynamic' != $stylesheet_type) add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
 		}
-		define('WDCA_FLAG_STYLESHEET_LOADED', true, true);
+		define('WDCA_FLAG_STYLESHEET_LOADED', true);
 	}
 
 	private function _get_processed_styles () {

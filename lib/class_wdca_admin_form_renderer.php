@@ -208,14 +208,14 @@ class Wdca_AdminFormRenderer {
 		$value = esc_attr((
 			$value
 				? $value
-				: 'In Post Ads'
+				: 'BeitragsAds'
 		));
 		echo "<input type='text' name='{$this->_mode_prefix}[ga_category]' value='{$value}' class='regular-text' />";
 	}
 
 	function create_ga_label_box () {
 		$value = $this->_get_option('ga_label');
-		if (!$value) $value = Wdca_Data::DEFAULT_KEY == $this->_mode_prefix ? 'Default' : 'Group B';
+		if (!$value) $value = Wdca_Data::DEFAULT_KEY == $this->_mode_prefix ? 'Standard' : 'Group B';
 		$value = esc_attr($value);
 		echo "<input type='text' name='{$this->_mode_prefix}[ga_label]' value='{$value}' class='regular-text' />";
 	}
@@ -390,7 +390,7 @@ EOMappingJs;
 
 	function create_ab_mode_setup_box () {
 		echo '<p><i>' .
-			__('Hier kannst Du Deine A/B-Tests einrichten und die Laderegeln für Gruppen einstellen.', 'wdca') .
+			__('Hier kannst Du Deine A/B-Tests einrichten und die Laderegeln für Gruppen einstellen. Mehr Kontrolle erhätst Du mit unserem <a ref="https://n3rds.work/piestingtal_source/a-b-test-plugin/" target="_blank" rel="noopener">A/B-Tests Plugin</a>!', 'wdca') .
 		'</i></p>';
 	}
 
