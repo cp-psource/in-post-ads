@@ -40,7 +40,7 @@ function wdca_openReelEditor() {
 
         // Bind events
         $(document).on('wdca_selector_open', function() {
-            $("#wdca_ads").html("loading");
+            $("#wdca_ads").html("Lade Anzeigen");
             $.post(ajaxurl, { "action": "wdca_list_ads" }, function(data) {
                 var html = '';
 
@@ -113,7 +113,7 @@ function wdca_openReelEditor() {
 
         mbuttons_container.append('' +
             '<a onclick="return wdca_openReelEditor();" title="' + l10nWdca.add_ad + '" class="thickbox" id="add_map" href="#TB_inline?width=640&height=594&inlineId=wdca_ad_container">' +
-            '<img onclick="return false;" alt="' + l10nWdca.add_ad + '" src="' + _wdca_data.root_url + '/img/ad.png">' +
+            '<img class="button" onclick="return false;" alt="' + l10nWdca.add_ad + '" src="' + _wdca_data.root_url + '/img/ad.png">' +
             '</a>'
         );
 
