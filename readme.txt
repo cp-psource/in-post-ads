@@ -50,6 +50,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 1.5.8 = DerN3rd =
+
+* Fix: Declaration of case-insensitive constants
+
 = 1.5.7 = DerN3rd =
 
 * Fix depracated create_function

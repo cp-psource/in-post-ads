@@ -384,7 +384,8 @@ class Wdca_CustomAd {
 		add_action($hook, array($this, 'include_frontend_stylesheet'), 18);
 		add_action($hook, array($this, 'include_frontend_javascript'), 19);
 
-		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true, true);
+		//define('WDCA_FLAG_LATE_INCLUSION_BOUND', true, true);
+		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true);
 	}
 
 	public static function get_root_prefix () {
