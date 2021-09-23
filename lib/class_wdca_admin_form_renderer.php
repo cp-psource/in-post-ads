@@ -390,14 +390,14 @@ EOMappingJs;
 
 	function create_ab_mode_setup_box () {
 		echo '<p><i>' .
-			__('Hier kannst Du Deine A/B-Tests einrichten und die Laderegeln für Gruppen einstellen. Mehr Kontrolle erhätst Du mit unserem <a ref="https://n3rds.work/piestingtal_source/a-b-test-plugin/" target="_blank" rel="noopener">A/B-Tests Plugin</a>!', 'wdca') .
+			__('Hier kannst Du Deine A/B-Tests einrichten und die Laderegeln für Gruppen einstellen.', 'wdca') .
 		'</i></p>';
 	}
 
 	function create_sessions_box () {
 		echo $this->_create_checkbox('remember_in_session');
 		echo '<div><small>' .
-			__('Standardmäßig ist die Verteilung im A/B-Modus zufällig. Durch Aktivieren dieser Option wird der ursprünglich ausgewählte Modus für Deinee Benutzer erzwungen, damit sie über Anforderungen hinweg bestehen bleiben (d. H. Benutzer, die Einstellungen für den A-Modus erhalten haben, werden diese weiterhin sehen und umgekehrt)..', 'wdca') .
+			__('Standardmäßig ist die Verteilung im A/B-Modus zufällig. Durch Aktivieren dieser Option wird der ursprünglich ausgewählte Modus für Deinee Benutzer erzwungen, damit sie über Anforderungen hinweg bestehen bleiben (d. H. Benutzer, die Einstellungen für den A-Modus erhalten haben, werden diese weiterhin sehen und umgekehrt).', 'wdca') .
 		'</small></div>';
 	}
 
