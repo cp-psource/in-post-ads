@@ -3,9 +3,10 @@
 Plugin Name: PS BeitragsAds
 Plugin URI: https://n3rds.work/piestingtal_source/in-post-ads-plugin/
 Description: Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
-Version: 1.5.7
+Version: 1.5.8
 Author: WMS N@W
 Author URI: https://n3rds.work
+Text Domain: wdca
 
 
 Copyright 2020-2021 WMS N@W (https://n3rds.work)
