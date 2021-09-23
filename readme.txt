@@ -58,5 +58,4 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 = 1.5.5 = DerN3rd =
 
-* Overhauled von WPMUDEV
-* Release WMS N@W Netzwerksuche
+* Release 
