@@ -3,7 +3,7 @@
 Plugin Name: PS BeitragsAds
 Plugin URI: https://n3rds.work/piestingtal_source/in-post-ads-plugin/
 Description: Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
-Version: 1.5.6
+Version: 1.5.7
 Author: WMS N@W
 Author URI: https://n3rds.work
 
@@ -23,7 +23,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-require 'lib/psource-plugin-update/plugin-update-checker.php';
+require 'psource/psource-plugin-update/plugin-update-checker.php';
 $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=ps-post-ads', 
 	__FILE__, 
