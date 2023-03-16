@@ -35,7 +35,7 @@ Biete angemeldeten Benutzern ein werbefreies Leseerlebnis und ermutige die Besuc
 
 Mit unserem [A/B Test Plugin](https://n3rds.work/piestingtal_source/a-b-test-plugin/) holst Du mehr aus der im BeitragsADS Plugin integrierten A/B Test-Funktion.
 
-Wirf einen Blick in unser [PSOURCE Sortiment](https://n3rds.work/psource_kategorien/psource-plugins/) und hole noch mehr aus Deinem WordPress/ClassicPress!
+Wirf einen Blick in unser [PSOURCE Sortiment](https://n3rds.work/psource_kategorien/psource-plugins/) und hole noch mehr aus Deinem ClassicPress/ClassicPress!
 
 Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswork-digalize-das-piestingtal/newsletter-management/) über unsere Piestingtal.Source informiert!
 

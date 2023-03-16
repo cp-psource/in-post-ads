@@ -9,7 +9,7 @@ Author URI: https://n3rds.work
 Text Domain: wdca
 
 
-Copyright 2020-2021 WMS N@W (https://n3rds.work)
+Copyright 2020-2023 WMS N@W (https://n3rds.work)
 Author - DerN3rd (WMS N@W)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
