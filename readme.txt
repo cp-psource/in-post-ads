@@ -1,7 +1,7 @@
 === PS BeitragsAds ===
 Contributors: DerN3rd (WMS N@W)
 Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
-Tags: multisite, suche, netzwerksuche
+Tags: multisite, ads, in-post, werbung, classicpress-plugin
 Requires at least: 4.9
 Tested up to: 5.6
 Stable tag: 1.5.8
@@ -11,7 +11,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
 
+Define custom ads for post types and more, the easiest tool to place ads effectively.
+
 == Description ==
+
+= DEUTSCH =
 
 Mit PS-BeitragsADS werden Anzeigen dort geschaltet, wo Nutzer am meisten mit Deinen Inhalten beschäftigt sind.
 Besucher können blind für Banner- und Seitenleistenwerbung sein. Mit PS-BeitragsADS wird dieses Problem gelöst, 
@@ -22,10 +26,21 @@ Mit PS-BeitragsADS wird genau die richtige Menge Pop verwendet, ohne dass Deine 
 Beginne mit einem integrierten Stil oder erstelle einen benutzerdefinierten Look. 
 Biete angemeldeten Benutzern ein werbefreies Leseerlebnis und ermutige die Besucher, ein Upgrade durchzuführen.
 
+= ENGLISH =
 
-[Projektseite](https://n3rds.work/piestingtal_source/in-post-ads-plugin/)
-[Supportforum](https://n3rds.work/forums/forum/ps-voting-supportforum/)
-[GitHub](https://github.com/piestingtal-source/ps-post-ads)
+With PS-BeitragsADS, ads are placed where users are most engaged with your content.
+Visitors can be blind to banner and sidebar ads. With PS-BeitragsADS this problem is solved,
+by inserting unobtrusive ads into your website content.
+
+Ads that don't annoy
+With PS-PostsADS, just the right amount of pop is used without degrading your content.
+Start with a built-in style or create a custom look.
+Offer registered users an ad-free reading experience and encourage visitors to upgrade.
+
+
+[Projektseite](https://n3rds.work/cp_psource/ps-beitragsads-plugin/)
+[Supportforum](https://n3rds.work/forum/ps-beitragsads-supportforum/)
+[GitHub](https://github.com/cp-psource/ps-post-ads)
 
 [POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/cp-powersource/)
 
@@ -78,6 +93,8 @@ Make a [donation by bank transfer or PayPal](https://n3rds.work/spenderaktionen/
 = 1.5.9 =
 
 * Fix: Uncaught TypeError: Cannot access offset of type string on string
+* English Translations
+* PhP8.0 Tested
 
 = 1.5.8 =
 

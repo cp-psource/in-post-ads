@@ -368,7 +368,7 @@ msgstr ""
 #: lib/class_wdca_admin_form_renderer.php:400
 msgid ""
 "Standardmäßig ist die Verteilung im A/B-Modus zufällig. Durch Aktivieren "
-"dieser Option wird der ursprünglich ausgewählte Modus für Deinee Benutzer "
+"dieser Option wird der ursprünglich ausgewählte Modus für Deine Benutzer "
 "erzwungen, damit sie über Anforderungen hinweg bestehen bleiben (d. H. "
 "Benutzer, die Einstellungen für den A-Modus erhalten haben, werden diese "
 "weiterhin sehen und umgekehrt)."
@@ -713,8 +713,8 @@ msgid "PS BeitragsAds"
 msgstr "PS Post Ads"
 
 #. Plugin URI of the plugin/theme
-msgid "https://n3rds.work/piestingtal_source/in-post-ads-plugin/"
-msgstr "https://n3rds.work/piestingtal_source/in-post-ads-plugin/"
+msgid "https://n3rds.work/cp_psource/ps-beitragsads-plugin/"
+msgstr "https://n3rds.work/cp_psource/ps-beitragsads-plugin/"
 
 #. Description of the plugin/theme
 msgid ""
