@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: multisite, ads, in-post, werbung, classicpress-plugin
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 1.5.8
+Stable tag: 1.5.9
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
