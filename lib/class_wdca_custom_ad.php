@@ -136,10 +136,21 @@ class Wdca_CustomAd {
 	public function render_appearance_box () {
 		global $post;
 		$appearance = get_post_meta($post->ID, 'wdca_appearance', true);
-		$title = @$appearance['hide_title'] ? 'checked="checked"' : '';
-		$body = @$appearance['hide_body'] ? 'checked="checked"' : '';
-		$footer = @$appearance['hide_footer'] ? 'checked="checked"' : '';
-		$strip_class = @$appearance['strip_class'] ? 'checked="checked"' : '';
+		
+		// add check to ensure $appearance is an array
+		if (is_array($appearance)) {
+			$title = @$appearance['hide_title'] ? 'checked="checked"' : '';
+			$body = @$appearance['hide_body'] ? 'checked="checked"' : '';
+			$footer = @$appearance['hide_footer'] ? 'checked="checked"' : '';
+			$strip_class = @$appearance['strip_class'] ? 'checked="checked"' : '';
+		} else {
+			// handle the case where $appearance is not an array
+			$title = '';
+			$body = '';
+			$footer = '';
+			$strip_class = '';
+		}
+	
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[hide_title]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_title]' id='wdca_appearance-hide_title' value='1' {$title} /> " .
@@ -160,7 +171,7 @@ class Wdca_CustomAd {
 			"<input type='checkbox' name='wdca_appearance[strip_class]' id='wdca_appearance-strip_class' value='1' {$strip_class} /> " .
 			'<label for="wdca_appearance-strip_class">' . __('Standardstil entfernen', 'wdca') . '</label>' .
 		'</p>';
-	}
+	}	
 
 	public function save_ad_meta () {
 		global $post;
