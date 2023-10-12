@@ -112,7 +112,7 @@ function wdca_openReelEditor() {
         if (!mbuttons_container.length) return;
 
         mbuttons_container.append('' +
-            '<a onclick="return wdca_openReelEditor();" title="' + l10nWdca.add_ad + '" class="thickbox" id="add_map" href="#TB_inline?width=640&height=594&inlineId=wdca_ad_container">' +
+            '<a onclick="return wdca_openReelEditor();" title="' + l10nWdca.add_ad + '" class="thickbox" id="add_ad" href="#TB_inline?width=640&height=594&inlineId=wdca_ad_container">' +
             '<img class="button" onclick="return false;" alt="' + l10nWdca.add_ad + '" src="' + _wdca_data.root_url + '/img/ad.png">' +
             '</a>'
         );

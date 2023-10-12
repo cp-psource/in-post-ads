@@ -74,7 +74,6 @@ class Wdca_AdminPages {
 		$form = new Wdca_AdminFormRenderer($mode);
 
 		register_setting($mode, $mode);
-		//add_settings_section('wdca_settings', __('Benutzerdefinierte Anzeigen', 'wdca'), create_function('', ''), "{$mode}-options");
 		add_settings_section('wdca_settings', __('Benutzerdefinierte Anzeigen', 'wdca'), function() {}, "{$mode}-options");
 		add_settings_field('wdca_enable', __('Aktiviere Benutzerdefinierte Anzeigen', 'wdca'), array($form, 'create_enabled_box'), "{$mode}-options", 'wdca_settings');
 		add_settings_field('wdca_test', __('Live Modus', 'wdca'), array($form, 'create_live_mode_box'), "{$mode}-options", 'wdca_settings');
@@ -85,7 +84,6 @@ class Wdca_AdminPages {
 		add_settings_field('wdca_ad_delay', __('Verzögertes Einfügen von Anzeigen', 'wdca'), array($form, 'create_ad_show_after_box'), "{$mode}-options", 'wdca_settings');
 		add_settings_field('wdca_predefined_positions', __('Vordefinierte Positionen', 'wdca'), array($form, 'create_predefined_positions_box'), "{$mode}-options", 'wdca_settings');
 
-		//add_settings_section('wdca_appearance', __('Aussehen &amp; Mitteilungen', 'wdca'), create_function('', ''), "{$mode}-options");
 		add_settings_section('wdca_appearance', __('Aussehen &amp; Mitteilungen', 'wdca'), function() {}, "{$mode}-options");
 		add_settings_field('wdca_theme', __('Theme', 'wdca'), array($form, 'create_theme_box'), "{$mode}-options", 'wdca_appearance');
 		add_settings_field('wdca_messages', __('Mitteilungen', 'wdca'), array($form, 'create_messages_box'), "{$mode}-options", 'wdca_appearance');
@@ -96,7 +94,6 @@ class Wdca_AdminPages {
 		add_settings_field('wdca_ga_category', __('Ereigniskategorie', 'wdca'), array($form, 'create_ga_category_box'), "{$mode}-options", 'wdca_analytics');
 		add_settings_field('wdca_ga_label', __('Ereignislabel', 'wdca'), array($form, 'create_ga_label_box'), "{$mode}-options", 'wdca_analytics');
 
-		//add_settings_section('wdca_advanced', __('Erweitert', 'wdca'), create_function('', ''), "{$mode}-options");
 		add_settings_section('wdca_advanced', __('Erweitert', 'wdca'), function() {}, "{$mode}-options");
 		add_settings_field('wdca_allow_post_types', __('Benutzerdefinierte Beitragstypen Anzeigen', 'wdca'), array($form, 'create_cpt_ads_box'), "{$mode}-options", 'wdca_advanced');
 		add_settings_field('wdca_post_metabox', __('Beitrag Metabox anzeigen', 'wdca'), array($form, 'create_post_metabox_box'), "{$mode}-options", 'wdca_advanced');

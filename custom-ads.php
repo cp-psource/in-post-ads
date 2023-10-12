@@ -3,7 +3,7 @@
 Plugin Name: PS BeitragsAds
 Plugin URI: https://n3rds.work/cp_psource/ps-beitragsads-plugin/
 Description: Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
-Version: 1.5.9
+Version: 1.6.0
 Author: WMS N@W
 Author URI: https://n3rds.work
 Text Domain: wdca
@@ -37,9 +37,9 @@ define ('WDCA_PROTOCOL', (@$_SERVER["HTTPS"] == 'on' ? 'https://' : 'http://'));
 
 //Setup proper paths/URLs and load text domains
 if (is_multisite() && defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename(__FILE__))) {
-	define ('WDCA_PLUGIN_LOCATION', 'mu-plugins', true);
-	define ('WDCA_PLUGIN_BASE_DIR', WPMU_PLUGIN_DIR, true);
-	define ('WDCA_PLUGIN_URL', str_replace('http://', WDCA_PROTOCOL, WPMU_PLUGIN_URL), true);
+	define ('WDCA_PLUGIN_LOCATION', 'mu-plugins');
+	define ('WDCA_PLUGIN_BASE_DIR', WPMU_PLUGIN_DIR);
+	define ('WDCA_PLUGIN_URL', str_replace('http://', WDCA_PROTOCOL, WPMU_PLUGIN_URL));
 	$textdomain_handler = 'load_muplugin_textdomain';
 } else if (defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/' . WDCA_PLUGIN_SELF_DIRNAME . '/' . basename(__FILE__))) {
 	define ('WDCA_PLUGIN_LOCATION', 'subfolder-plugins');
@@ -47,9 +47,9 @@ if (is_multisite() && defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') &
 	define ('WDCA_PLUGIN_URL', str_replace('http://', WDCA_PROTOCOL, WP_PLUGIN_URL) . '/' . WDCA_PLUGIN_SELF_DIRNAME);
 	$textdomain_handler = 'load_plugin_textdomain';
 } else if (defined('WP_PLUGIN_URL') && defined('WP_PLUGIN_DIR') && file_exists(WP_PLUGIN_DIR . '/' . basename(__FILE__))) {
-	define ('WDCA_PLUGIN_LOCATION', 'plugins', true);
-	define ('WDCA_PLUGIN_BASE_DIR', WP_PLUGIN_DIR, true);
-	define ('WDCA_PLUGIN_URL', str_replace('http://', WDCA_PROTOCOL, WP_PLUGIN_URL), true);
+	define ('WDCA_PLUGIN_LOCATION', 'plugins');
+	define ('WDCA_PLUGIN_BASE_DIR', WP_PLUGIN_DIR,);
+	define ('WDCA_PLUGIN_URL', str_replace('http://', WDCA_PROTOCOL, WP_PLUGIN_URL));
 	$textdomain_handler = 'load_plugin_textdomain';
 } else {
 	// No textdomain is loaded because we can't determine the plugin location.

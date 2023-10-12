@@ -126,25 +126,18 @@ class Wdca_CustomAd {
 		);
 	}
 
-	public function render_link_box () {
-		global $post;
-		$link = get_post_meta($post->ID, 'wdca_plugin_url', true);
-		echo '<p><label for="wdca_plugin_url">' . __('Link URL', 'wdca') . '</label>';
-		echo "<input type='text' name='wdca_plugin_url' id='wdca_plugin_url' class='widefat' value='{$link}' /></p>";
-	}
-
-	public function render_appearance_box () {
+	public function render_appearance_box() {
 		global $post;
 		$appearance = get_post_meta($post->ID, 'wdca_appearance', true);
-		
-		// add check to ensure $appearance is an array
+	
+		// Überprüfen, ob $appearance ein Array ist
 		if (is_array($appearance)) {
-			$title = @$appearance['hide_title'] ? 'checked="checked"' : '';
-			$body = @$appearance['hide_body'] ? 'checked="checked"' : '';
-			$footer = @$appearance['hide_footer'] ? 'checked="checked"' : '';
-			$strip_class = @$appearance['strip_class'] ? 'checked="checked"' : '';
+			$title = isset($appearance['hide_title']) && $appearance['hide_title'] ? 'checked="checked"' : '';
+			$body = isset($appearance['hide_body']) && $appearance['hide_body'] ? 'checked="checked"' : '';
+			$footer = isset($appearance['hide_footer']) && $appearance['hide_footer'] ? 'checked="checked"' : '';
+			$strip_class = isset($appearance['strip_class']) && $appearance['strip_class'] ? 'checked="checked"' : '';
 		} else {
-			// handle the case where $appearance is not an array
+			// Wenn $appearance keine Array ist, setzen Sie die Werte auf Standardwerte oder leere Zeichenfolgen
 			$title = '';
 			$body = '';
 			$footer = '';
@@ -155,22 +148,22 @@ class Wdca_CustomAd {
 			'<input type="hidden" name="wdca_appearance[hide_title]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_title]' id='wdca_appearance-hide_title' value='1' {$title} /> " .
 			'<label for="wdca_appearance-hide_title">' . __('Titel nicht anzeigen', 'wdca') . '</label>' .
-		'</p>';
+			'</p>';
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[hide_body]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_body]' id='wdca_appearance-hide_body' value='1' {$body} /> " .
 			'<label for="wdca_appearance-hide_body">' . __('Inhalt nicht anzeigen', 'wdca') . '</label>' .
-		'</p>';
-		echo '<p>'.
+			'</p>';
+		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[hide_footer]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_footer]' id='wdca_appearance-hide_footer' value='1' {$footer} /> " .
 			'<label for="wdca_appearance-hide_footer">' . __('Footer nicht anzeigen', 'wdca') . '</label>' .
-		'</p>';
+			'</p>';
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[strip_class]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[strip_class]' id='wdca_appearance-strip_class' value='1' {$strip_class} /> " .
 			'<label for="wdca_appearance-strip_class">' . __('Standardstil entfernen', 'wdca') . '</label>' .
-		'</p>';
+			'</p>';
 	}	
 
 	public function save_ad_meta () {
