@@ -2,53 +2,52 @@
 
 Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
 
-## PS BeitragsAds puts advertisements where users are most engaged with your content.
+## PS BeitragsAds platziert Anzeigen dort, wo Nutzer am meisten mit Ihren Inhalten interagieren.
 
-Visitors can be blind to banner and sidebar advertising. PS BeitragsAds solves that problem by inserting unobtrusive ads within the content of your site.  
+Besucher können für Banner- und Seitenleistenwerbung blind sein. PS BeitragsAds löst dieses Problem, indem es unauffällige Anzeigen in den Inhalt Deiner Webseite einfügt.
 
-![Simple ads that blend with your content.](http://premium.wpmudev.org/wp-content/uploads/2011/08/inpostad-700x447.jpg)
+![Einfache Anzeigen, die mit Deinen Inhalten harmonieren.](http://premium.wpmudev.org/wp-content/uploads/2011/08/inpostad-700x447.jpg)
 
- Simple ads that complement the content on your post.
+  Einfache Anzeigen, die den Inhalt Deines Beitrags ergänzen.
 
-### Ads That Aren't Annoying
+### Werbung, die nicht nervt
 
-PS BeitragsAds uses just the right amount of pop without taking away from your content. Get started with a built-in style or create a custom look. Offer logged in users an ad-free reading experience, encouraging visitors to upgrade.   
+PS BeitragsAds verwendet genau die richtige Menge an Pop, ohne Deinen Inhalt zu beeinträchtigen. Beginne mit einem integrierten Stil oder erstelle einen benutzerdefinierten Look. Biete angemeldeten Nutzern ein werbefreies Leseerlebnis und ermutige Besucher zum Upgrade.
 
-![Incredible, simple controls for displaying ads based on your specific needs. ](http://premium.wpmudev.org/wp-content/uploads/2011/08/display-settings-735x470-700x447.jpg)
+![Unglaubliche, einfache Steuerelemente für die Anzeige von Anzeigen basierend auf Deinen spezifischen Anforderungen. ](http://premium.wpmudev.org/wp-content/uploads/2011/08/display-settings-735x470-700x447.jpg)
 
- Incredible, simple controls for displaying ads based on your specific needs.
+  Unglaubliche, einfache Steuerelemente zum Anzeigen von Anzeigen basierend auf Deinen spezifischen Anforderungen.
 
-### Real Control
+### Echte Kontrolle
 
-Inject ads where you choose, at random or in a predefined order. Trigger display using categories, tags and post types. Show ads right when a post is published or only after its been live a few days.   
+Füge Anzeigen dort ein, wo Du möchteat, nach dem Zufallsprinzip oder in einer vordefinierten Reihenfolge. Löse die Anzeige mithilfe von Kategorien, Tags und Beitragstypen aus. Schalte Anzeigen direkt bei der Veröffentlichung eines Beitrags oder erst, nachdem er einige Tage online war.
 
-![Market like a pro with included A/B testing.](http://premium.wpmudev.org/wp-content/uploads/2011/08/A-B-testing-735x470.jpg)
+![Vermarkte wie ein Profi mit integrierten A/B-Tests.](http://premium.wpmudev.org/wp-content/uploads/2011/08/A-B-testing-735x470.jpg)
 
- Market like a pro with included A/B testing.
+  Vermarkte wie ein Profi mit integrierten A/B-Tests.
 
-### Find What Works Best
+### Finde heraus, was am besten funktioniert
 
-Get higher conversion rates using built-in A/B testing. Test two completely different configurations and find which ads at what place work best. Integrate with Google Analytics to create the ultimate WordPress marketing experience.  
+Erziele höhere Conversion-Raten mit integrierten A/B-Tests. Teste zwei völlig unterschiedliche Konfigurationen und finde heraus, welche Anzeigen an welcher Stelle am besten funktionieren. Integriere Google Analytics, um das ultimative WordPress-Marketingerlebnis zu schaffen.
 
-Generate more revenue and increase sales by automatically inserting ads into your posts with PS BeitragsAds.
+Generiere mehr Umsatz und steigere den Umsatz, indem Du mit PS BeitragsAds automatisch Anzeigen in Deine Beiträge einfügst.
 
-## Usage
+## Verwendung
 
-Start by reading [Installing plugins](https://premium.wpmudev.org/wpmu-manual/installing-regular-plugins-on-wpmu/) section in our comprehensive [WordPress and WordPress Multisite Manual](https://premium.wpmudev.org/wpmu-manual/) if you are new to WordPress.
 
-### **To Install:**
+### **Installieren:**
 
-1\. Download the plugin file 
+1\. Lade die Plugin-Datei herunter
 
-2\. Unzip the file into a folder on your hard drive 
+2\. Entpacke die Datei in einen Ordner auf Deiner Festplatte
 
-3\. Upload the **_/custom-ads/_** folder and all its contents to the **/wp-content/plugins/** folder on your site 
+3\. Lade den Ordner **_/custom-ads/_** und seinen gesamten Inhalt in den Ordner **/wp-content/plugins/** auf Deiner Webseite hoch
 
-4\. Login to your admin panel for WordPress or Multisite and activate the plugin:
+4\. Melde Dich bei Deinem Admin-Panel für WordPress oder Multisite an und aktiviere das Plugin:
 
-*   On regular WordPress installs - visit **Plugins** and **Activate** the plugin.
-*   For WordPress Multisite installs - Activate it **site-by-site** in **Plugins** in the site admin dashboard (say if you wanted to make it a Supporter premium plugin), or visit **Network Admin -> Plugins** and **Network Activate** the plugin.
+* Bei regulären WordPress-Installationen – besuche **Plugins** und **aktivieren** das Plugin.
+* Für WordPress-Multisite-Installationen – Aktiviere es **Site für Site** unter **Plugins** im Site-Admin-Dashboard (z. B. wenn Du es zu einem Supporter-Premium-Plugin machen möchtest) oder besuche **Netzwerkadministration -> Plugins** und **Netzwerk Aktiviere** das Plugin.
 
-5\. Once activated, go to PS BeitragsAds menu to customize the settings.
+5\. Gehe nach der Aktivierung zum PS-BeitragsAds-Menü, um die Einstellungen anzupassen.
 
-![PS BeitragsAds settings](https://premium.wpmudev.org/wp-content/uploads/2011/08/inpost-add-new.png)
+![PS BeitragsAds-Einstellungen](https://premium.wpmudev.org/wp-content/uploads/2011/08/inpost-add-new.png)
