@@ -54,7 +54,7 @@ if (is_multisite() && defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') &
 } else {
 	// No textdomain is loaded because we can't determine the plugin location.
 	// No point in trying to add textdomain to string and/or localizing it.
-	wp_die(__('Es gab ein Problem beim Bestimmen, wo das Plugin "In Post Ads" installiert ist. Bitte erneut installieren.'));
+	wp_die(__('Es gab ein Problem beim Bestimmen, wo das Plugin "PS BeitragsAds" installiert ist. Bitte erneut installieren.'));
 }
 $textdomain_handler('wdca', false, WDCA_PLUGIN_SELF_DIRNAME . '/languages/');
 

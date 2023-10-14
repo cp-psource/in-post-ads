@@ -23,7 +23,7 @@ msgstr ""
 
 #: custom-ads.php:57
 msgid ""
-"Es gab ein Problem beim Bestimmen, wo das Plugin \"In Post Ads\" installiert "
+"Es gab ein Problem beim Bestimmen, wo das Plugin \"PS BeitragsAds\" installiert "
 "ist. Bitte erneut installieren."
 msgstr ""
 

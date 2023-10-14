@@ -25,10 +25,10 @@ msgstr ""
 
 #: custom-ads.php:57
 msgid ""
-"Es gab ein Problem beim Bestimmen, wo das Plugin \"In Post Ads\" installiert "
+"Es gab ein Problem beim Bestimmen, wo das Plugin \"PS BeitragsAds\" installiert "
 "ist. Bitte erneut installieren."
 msgstr ""
-"There was a problem determining where the \"In Post Ads\" plugin is "
+"There was a problem determining where the \"PS BeitragsAds\" plugin is "
 "installed. Please install again."
 
 #: lib/class_wdca_admin_form_renderer.php:23
