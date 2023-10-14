@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: multisite, ads, in-post, werbung, classicpress-plugin
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,10 @@ how about Would you like to support us with a coffee donation while working on o
 Make a [donation by bank transfer or PayPal](https://n3rds.work/spenderaktionen/unterstuetze-unsere-psource-free-werke/) we thank you!
 
 == ChangeLog ==
+
+= 1.6.1 =
+
+* Fixes for PhP8
 
 = 1.6.0 =
 
