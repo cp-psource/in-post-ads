@@ -126,6 +126,13 @@ class Wdca_CustomAd {
 		);
 	}
 
+	public function render_link_box () {
+		global $post;
+		$link = get_post_meta($post->ID, 'wdca_plugin_url', true);
+		echo '<p><label for="wdca_plugin_url">' . __('Link URL', 'wdca') . '</label>';
+		echo "<input type='text' name='wdca_plugin_url' id='wdca_plugin_url' class='widefat' value='{$link}' /></p>";
+	}
+
 	public function render_appearance_box() {
 		global $post;
 		$appearance = get_post_meta($post->ID, 'wdca_appearance', true);
