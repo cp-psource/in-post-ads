@@ -14,17 +14,23 @@ class Wdca_AdminFormRenderer {
 		return @$opts[$key];
 	}
 
-	function _create_checkbox ($name) {
+	function _create_checkbox($name) {
 		$pfx = $this->_mode_prefix;
-		$opt = $this->_get_option($name);
-		$value = @$opt[$name];
-		return
-			"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' " . ((int)$value ? 'checked="checked" ' : '') . " /> " .
+		$opt = $this->_get_option();
+		$value = isset($opt[$name]) ? $opt[$name] : ''; // Ensure that $value is set to the option value if it exists in the array.
+	
+		// Check if the value should be checked based on the $value.
+		$yesChecked = ((int)$value === 1) ? 'checked="checked"' : '';
+		$noChecked = ((int)$value === 0) ? 'checked="checked"' : '';
+	
+		// Create the HTML for the checkboxes.
+		$html = "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' {$yesChecked} /> " .
 				"<label for='{$name}-yes'>" . __('Ja', 'wdca') . "</label>" .
-			'&nbsp;' .
-			"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' " . (!(int)$value ? 'checked="checked" ' : '') . " /> " .
-				"<label for='{$name}-no'>" . __('Nein', 'wdca') . "</label>" .
-		"";
+				'&nbsp;' .
+				"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' {$noChecked} /> " .
+				"<label for='{$name}-no'>" . __('Nein', 'wdca') . "</label>";
+	
+		return $html;
 	}
 
 	function _create_textbox ($name) {
@@ -304,7 +310,7 @@ function toggle_ads_to_cats () {
 	root.show();
 }
 
-$("#wdca_categories").change(toggle_ads_to_cats);
+$("#wdca_categories").on("change", toggle_ads_to_cats);
 toggle_ads_to_cats();
 
 });
@@ -356,7 +362,7 @@ function toggle_ads_to_tags () {
 	root.show();
 }
 
-$("#wdca_tags").change(toggle_ads_to_tags);
+$("#wdca_tags").on("change", toggle_ads_to_tags);
 toggle_ads_to_tags();
 
 });

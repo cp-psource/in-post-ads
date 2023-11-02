@@ -89,6 +89,11 @@ Make a [donation by bank transfer or PayPal](https://n3rds.work/spenderaktionen/
 
 == ChangeLog ==
 
+= 1.6.2 =
+
+* Fix offset of type string
+* Fix Deprecated .change() jQuery
+
 = 1.6.1 =
 
 * Fixes for PhP8
