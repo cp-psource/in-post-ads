@@ -296,25 +296,25 @@ class Wdca_AdminFormRenderer {
 		echo '</table>';
 		_e('Wenn Du hier keine Zuordnungen festlegst, kann jede Anzeige in einem der Beiträge erscheinen.', 'wdca');
 		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_cats () {
-	var cat = $("#wdca_categories").val();
-	var root = $("#wdca_ads_to-cat-" + cat);
-	if (!root.length) return false;
-	$(".wdca_ads_to_cat").hide();
-	root.show();
-}
-
-$("#wdca_categories").on("change", toggle_ads_to_cats);
-toggle_ads_to_cats();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
+		<script type="text/javascript">
+		(function ($) {
+		$(function () {
+		
+		function toggle_ads_to_cats () {
+			var cat = $("#wdca_categories").val();
+			var root = $("#wdca_ads_to-cat-" + cat);
+			if (!root.length) return false;
+			$(".wdca_ads_to_cat").hide();
+			root.show();
+		}
+		
+		$("#wdca_categories").change(toggle_ads_to_cats);
+		toggle_ads_to_cats();
+		
+		});
+		})(jQuery);
+		</script>
+		EOMappingJs;
 	}
 
 	function create_tags_box () {
@@ -348,25 +348,25 @@ EOMappingJs;
 		echo '</table>';
 		_e('Wenn Du hier keine Zuordnungen festlegst, kann jede Anzeige in einem der Beiträge erscheinen.', 'wdca');
 		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_tags () {
-	var tag = $("#wdca_tags").val();
-	var root = $("#wdca_ads_to-tag-" + tag);
-	if (!root.length) return false;
-	$(".wdca_ads_to_tag").hide();
-	root.show();
-}
-
-$("#wdca_tags").on("change", toggle_ads_to_tags);
-toggle_ads_to_tags();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
+		<script type="text/javascript">
+		(function ($) {
+		$(function () {
+		
+		function toggle_ads_to_tags () {
+			var tag = $("#wdca_tags").val();
+			var root = $("#wdca_ads_to-tag-" + tag);
+			if (!root.length) return false;
+			$(".wdca_ads_to_tag").hide();
+			root.show();
+		}
+		
+		$("#wdca_tags").change(toggle_ads_to_tags);
+		toggle_ads_to_tags();
+		
+		});
+		})(jQuery);
+		</script>
+		EOMappingJs;
 	}
 
 	function create_lazy_loading_box () {

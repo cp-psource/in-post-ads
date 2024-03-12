@@ -626,7 +626,7 @@ msgid "Anzeigenkategorien hinzufügen oder entfernen"
 msgstr "Add or remove ad categories"
 
 #: lib/class_wdca_custom_ad.php:88
-msgid "Wähle aus den am häufigsten verwendeten Anzeigenkategorien"
+msgid "Häufig verwendete Anzeigekategorien"
 msgstr "Choose from the most used ad categories"
 
 #: lib/class_wdca_custom_ad.php:100

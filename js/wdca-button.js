@@ -6,7 +6,6 @@ function wdca_openReelEditor() {
 (function($) {
     $(function() {
 
-
         /**
          * Inserts marker into regular (textarea) editor.
          */
@@ -29,8 +28,7 @@ function wdca_openReelEditor() {
             }
         }
 
-
-        //Create the needed editor container HTML
+        // Create the needed editor container HTML
         $('body').append(
             '<div id="wdca_ad_container" style="display:none">' +
             '<div id="wdca_ads">' +
@@ -73,7 +71,6 @@ function wdca_openReelEditor() {
 
                 // Existing ads
                 html += '<table class="widefat" border="1">';
-
                 html += '<thead><tr> <th>' + l10nWdca.ad_title + '</th> <th>' + l10nWdca.ad_date + '</th> <th></th> </tr></thead>';
                 html += '<tfoot><tr> <th>' + l10nWdca.ad_title + '</th> <th>' + l10nWdca.ad_date + '</th> <th></th> </tr></tfoot>';
 
@@ -86,12 +83,11 @@ function wdca_openReelEditor() {
                 });
 
                 html += '</table>';
-
                 $("#wdca_ads").html(html);
             });
         });
 
-        $(".wdca_insert_ad").on('click', function() {
+        $(document).on('click', ".wdca_insert_ad", function() {
             var id = parseInt($(this).find("input:hidden").val());
             var id_str = id ? 'id="' + id + '" ' : '';
             var size = $("#wdca_size").val();
@@ -108,7 +104,7 @@ function wdca_openReelEditor() {
         });
 
         // Find Media Buttons strip and add the new one
-        var mbuttons_container = $('#media-buttons').length ? /*3.2*/ $('#media-buttons') : /*3.3*/ $("#wp-content-media-buttons");
+        var mbuttons_container = $('#media-buttons').length ? $('#media-buttons') : $("#wp-content-media-buttons");
         if (!mbuttons_container.length) return;
 
         mbuttons_container.append('' +

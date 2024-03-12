@@ -85,7 +85,7 @@ class Wdca_CustomAd {
 				'all_items' => __('Alle Anzeigenkategorien', 'wdca'),
 				'separate_items_with_commas' => __('Anzeigenkategorien durch Kommas trennen', 'wdca'),
 				'add_or_remove_items' => __('Anzeigenkategorien hinzufügen oder entfernen', 'wdca'),
-				'choose_from_most_used' => __('Wähle aus den am häufigsten verwendeten Anzeigenkategorien', 'wdca'),
+				'choose_from_most_used' => __('Häufig verwendete Anzeigekategorien', 'wdca'),
 			),
 			'public' => true,
 			'show_in_nav_menus' => false,
@@ -175,10 +175,10 @@ class Wdca_CustomAd {
 
 	public function save_ad_meta () {
 		global $post;
-		if (@$_POST['wdca_plugin_url']) {
+		if (isset($_POST['wdca_plugin_url'])) {
 			update_post_meta($post->ID, "wdca_plugin_url", $_POST["wdca_plugin_url"]);
 		}
-		if (@$_POST['wdca_appearance']) {
+		if (isset($_POST['wdca_appearance'])) {
 			update_post_meta($post->ID, "wdca_appearance", $_POST["wdca_appearance"]);
 		}
 	}
