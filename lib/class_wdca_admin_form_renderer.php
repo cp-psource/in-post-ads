@@ -1,53 +1,51 @@
 <?php
 class Wdca_AdminFormRenderer {
 
-	private $_mode_prefix;
+    private $_mode_prefix;
 
-	public function __construct ($mode) {
-		if (Wdca_Data::AB_MODE_KEY == $mode) $this->_mode_prefix = Wdca_Data::AB_MODE_KEY;
-		else $this->_mode_prefix = Wdca_Data::get_valid_key($mode);
-	}
+    public function __construct($mode) {
+        if (Wdca_Data::AB_MODE_KEY == $mode) $this->_mode_prefix = Wdca_Data::AB_MODE_KEY;
+        else $this->_mode_prefix = Wdca_Data::get_valid_key($mode);
+    }
 
-	function _get_option ($key=false) {
-		$opts = get_option($this->_mode_prefix);
-		if (!$key) return $opts;
-		return @$opts[$key];
-	}
+    function _get_option($key = false) {
+        $opts = get_option($this->_mode_prefix);
+        if (!$key) return $opts;
+        return isset($opts[$key]) ? $opts[$key] : '';
+    }
 
-	function _create_checkbox($name) {
-		$pfx = $this->_mode_prefix;
-		$opt = $this->_get_option();
-		$value = isset($opt[$name]) ? $opt[$name] : ''; // Ensure that $value is set to the option value if it exists in the array.
-	
-		// Check if the value should be checked based on the $value.
-		$yesChecked = ((int)$value === 1) ? 'checked="checked"' : '';
-		$noChecked = ((int)$value === 0) ? 'checked="checked"' : '';
-	
-		// Create the HTML for the checkboxes.
-		$html = "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' {$yesChecked} /> " .
-				"<label for='{$name}-yes'>" . __('Ja', 'wdca') . "</label>" .
-				'&nbsp;' .
-				"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' {$noChecked} /> " .
-				"<label for='{$name}-no'>" . __('Nein', 'wdca') . "</label>";
-	
-		return $html;
-	}
+    function _create_checkbox($name) {
+        $pfx = $this->_mode_prefix;
+        $opt = $this->_get_option();
+        $value = isset($opt[$name]) ? $opt[$name] : '';
 
-	function _create_textbox ($name) {
-		$pfx = $this->_mode_prefix;
-		$value = (int)esc_attr($this->_get_option($name));
-		return "<input type='text' size='2' maxsize='4' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />";
-	}
+        $yesChecked = ((int)$value === 1) ? 'checked="checked"' : '';
+        $noChecked = ((int)$value === 0) ? 'checked="checked"' : '';
 
-	function _create_text_inputbox ($name, $label, $help='', $pfx='wdca') {
-		$pfx = $this->_mode_prefix;
-		$value = esc_attr($this->_get_option($name));
-		if ($help) $help = "<div><small>{$help}</small></div>";
-		return
-			"<label for='{$pfx}-{$name}'>{$label}</label> " .
-			"<input type='text' class='widefat' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />" .
-		$help;
-	}
+        $html = "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' {$yesChecked} /> " .
+            "<label for='{$name}-yes'>" . __('Ja', 'wdca') . "</label>" .
+            '&nbsp;' .
+            "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' {$noChecked} /> " .
+            "<label for='{$name}-no'>" . __('Nein', 'wdca') . "</label>";
+
+        return $html;
+    }
+
+    function _create_textbox($name) {
+        $pfx = $this->_mode_prefix;
+        $value = (int)esc_attr($this->_get_option($name));
+        return "<input type='text' size='2' maxsize='4' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />";
+    }
+
+    function _create_text_inputbox($name, $label, $help = '', $pfx = 'wdca') {
+        $pfx = $this->_mode_prefix;
+        $value = esc_attr($this->_get_option($name));
+        if ($help) $help = "<div><small>{$help}</small></div>";
+        return
+            "<label for='{$pfx}-{$name}'>{$label}</label> " .
+            "<input type='text' class='widefat' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />" .
+            $help;
+    }
 
 	function _create_radiobox ($name, $value) {
 		$pfx = $this->_mode_prefix;
@@ -164,11 +162,11 @@ class Wdca_AdminFormRenderer {
 	function create_theme_box () {
 		$themes = array(
 			'' => __('Standard', 'wdca'),
-			'wpmu' => __('WMS N@W', 'wdca'),
+			'wpmu' => __('PSOURCE', 'wdca'),
 			'dark' => __('Dunkel', 'wdca'),
 			'dotted' => __('Gepunktet', 'wdca'),
 			'greenbutton' => __('Grüner Knopf', 'wdca'),
-			'wpmu2013' => __('WMS N@W 2018', 'wdca'),
+			'wpmu2013' => __('PSOURCE 2018', 'wdca'),
 			'paper' => __('Papier (nur moderne Browser)', 'wdca'),
 			//'alex' => __('Alex', 'wdca'),
 		);

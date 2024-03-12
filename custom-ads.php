@@ -1,16 +1,16 @@
 <?php
 /*
 Plugin Name: PS BeitragsAds
-Plugin URI: https://n3rds.work/cp_psource/ps-beitragsads-plugin/
+Plugin URI: https://cp-psource.github.io/ps-post-ads/
 Description: Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
 Version: 1.6.1
-Author: WMS N@W
-Author URI: https://n3rds.work
+Author: PSOURCE
+Author URI: https://github.com/cp-psource
 Text Domain: wdca
 
 
-Copyright 2020-2023 WMS N@W (https://n3rds.work)
-Author - DerN3rd (WMS N@W)
+Copyright 2020-2024 PSOURCE (https://github.com/cp-psource)
+Author - DerN3rd (PSOURCE)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
 the Free Software Foundation.
@@ -24,16 +24,28 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-require 'psource/psource-plugin-update/psource-plugin-updater.php';
-use Psource\PluginUpdateChecker\v5\PucFactory;
-$MyUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=ps-post-ads', 
-	__FILE__, 
-	'ps-post-ads' 
+
+/**
+ * @@@@@@@@@@@@@@@@@ PS UPDATER 1.3 @@@@@@@@@@@
+ **/
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+ 
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/cp-psource/ps-post-ads',
+	__FILE__,
+	'ps-post-ads'
 );
+ 
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+/**
+ * @@@@@@@@@@@@@@@@@ ENDE PS UPDATER 1.3 @@@@@@@@@@@
+ **/
 
 define ('WDCA_PLUGIN_SELF_DIRNAME', basename(dirname(__FILE__)));
-define ('WDCA_PROTOCOL', (@$_SERVER["HTTPS"] == 'on' ? 'https://' : 'http://')); // Protocol check
+define('WDCA_PROTOCOL', (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == 'on' ? 'https://' : 'http://')); // Protocol check
 
 //Setup proper paths/URLs and load text domains
 if (is_multisite() && defined('WPMU_PLUGIN_URL') && defined('WPMU_PLUGIN_DIR') && file_exists(WPMU_PLUGIN_DIR . '/' . basename(__FILE__))) {

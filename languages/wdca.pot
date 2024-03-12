@@ -168,7 +168,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 #: lib/class_wdca_admin_form_renderer.php:161
-msgid "WMS N@W"
+msgid "PSOURCE"
 msgstr ""
 
 #: lib/class_wdca_admin_form_renderer.php:162
@@ -184,7 +184,7 @@ msgid "Grüner Knopf"
 msgstr ""
 
 #: lib/class_wdca_admin_form_renderer.php:165
-msgid "WMS N@W 2018"
+msgid "PSOURCE 2018"
 msgstr ""
 
 #: lib/class_wdca_admin_form_renderer.php:166
