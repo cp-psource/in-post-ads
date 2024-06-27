@@ -3,7 +3,7 @@
 Plugin Name: PS BeitragsAds
 Plugin URI: https://cp-psource.github.io/ps-post-ads/
 Description: Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
-Version: 1.6.1
+Version: 1.6.2
 Author: PSOURCE
 Author URI: https://github.com/cp-psource
 Text Domain: wdca
