@@ -11,17 +11,15 @@ Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einf
 - [Kontakt](https://github.com/cp-psource)
 - [Bug Report](https://github.com/cp-psource/ps-post-ads/issues)
 
-## Downloads
-Hier findest du die Downloads.
+<div style="display: flex; justify-content: space-around; background-color: #f3f3f3; padding: 10px; border-radius: 5px;">
 
-## Docs
-Hier sind die Dokumentationen.
-
-## Support
-Informationen zum Support.
-
-## Kontakt
-Wie du mich erreichen kannst.
+  <a href="#ps-post-ads" style="text-decoration: none; color: #0366d6; font-weight: bold;">Home</a>
+  <a href="https://github.com/cp-psource/ps-post-ads/releases" style="text-decoration: none; color: #0366d6; font-weight: bold;">Downloads</a>
+  <a href="https://github.com/cp-psource/ps-post-ads/wiki" style="text-decoration: none; color: #0366d6; font-weight: bold;">Docs</a>
+  <a href="https://github.com/cp-psource/ps-post-ads/discussions" style="text-decoration: none; color: #0366d6; font-weight: bold;">Support</a>
+  <a href="https://github.com/cp-psource/ps-post-ads/issues" style="text-decoration: none; color: #0366d6; font-weight: bold;">Bug Report</a>
+  
+</div>
 
 ## PS BeitragsAds platziert Anzeigen dort, wo Nutzer am meisten mit Ihren Inhalten interagieren.
 
