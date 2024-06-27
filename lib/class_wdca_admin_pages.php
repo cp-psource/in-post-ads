@@ -97,9 +97,9 @@ class Wdca_AdminPages {
 		add_settings_section('wdca_advanced', __('Erweitert', 'wdca'), function() {}, "{$mode}-options");
 		add_settings_field('wdca_allow_post_types', __('Benutzerdefinierte Beitragstypen Anzeigen', 'wdca'), array($form, 'create_cpt_ads_box'), "{$mode}-options", 'wdca_advanced');
 		add_settings_field('wdca_post_metabox', __('Beitrag Metabox anzeigen', 'wdca'), array($form, 'create_post_metabox_box'), "{$mode}-options", 'wdca_advanced');
-		add_settings_field('wdca_to_categories', __('Verbinde Beitragskategorien', 'wdca'), array($form, 'create_categories_box'), "{$mode}-options", 'wdca_advanced');
-		add_settings_field('wdca_to_tags', __('Verbinde Beitrags-Tags', 'wdca'), array($form, 'create_tags_box'), "{$mode}-options", 'wdca_advanced');
-		add_settings_field('wdca_elements', __('Elementauswahl', 'wdca'), array($form, 'create_selector_box'), "{$mode}-options", 'wdca_advanced');
+		add_settings_field('wdca_to_categories', __('Verknüpfe Beitragskategorien', 'wdca'), array($form, 'create_categories_box'), "{$mode}-options", 'wdca_advanced');
+		add_settings_field('wdca_to_tags', __('Verknüpfe Beitrags-Tags', 'wdca'), array($form, 'create_tags_box'), "{$mode}-options", 'wdca_advanced');
+		add_settings_field('wdca_elements', __('Selector', 'wdca'), array($form, 'create_selector_box'), "{$mode}-options", 'wdca_advanced');
 		add_settings_field('wdca_lazy_loading', __('Verzögertes Laden', 'wdca'), array($form, 'create_lazy_loading_box'), "{$mode}-options", 'wdca_advanced');
 	}
 

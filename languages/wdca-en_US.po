@@ -510,11 +510,11 @@ msgid "Beitrag Metabox anzeigen"
 msgstr "Show post metabox"
 
 #: lib/class_wdca_admin_pages.php:103
-msgid "Verbinde Beitragskategorien"
+msgid "Verknüpfe Beitragskategorien"
 msgstr "Connect post categories"
 
 #: lib/class_wdca_admin_pages.php:104
-msgid "Verbinde Beitrags-Tags"
+msgid "Verknüpfe Beitrags-Tags"
 msgstr "Merge post tags"
 
 #: lib/class_wdca_admin_pages.php:105

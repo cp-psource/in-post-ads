@@ -6,7 +6,7 @@ Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einf
 
 Besucher können für Banner- und Seitenleistenwerbung blind sein. PS BeitragsAds löst dieses Problem, indem es unauffällige Anzeigen in den Inhalt Deiner Webseite einfügt.
 
-![Einfache Anzeigen, die mit Deinen Inhalten harmonieren.](http://premium.wpmudev.org/wp-content/uploads/2011/08/inpostad-700x447.jpg)
+![Einfache Anzeigen, die mit Deinen Inhalten harmonieren.](images/inpostad-700x447.jpg)
 
   Einfache Anzeigen, die den Inhalt Deines Beitrags ergänzen.
 
@@ -14,7 +14,7 @@ Besucher können für Banner- und Seitenleistenwerbung blind sein. PS BeitragsAd
 
 PS BeitragsAds verwendet genau die richtige Menge an Pop, ohne Deinen Inhalt zu beeinträchtigen. Beginne mit einem integrierten Stil oder erstelle einen benutzerdefinierten Look. Biete angemeldeten Nutzern ein werbefreies Leseerlebnis und ermutige Besucher zum Upgrade.
 
-![Unglaubliche, einfache Steuerelemente für die Anzeige von Anzeigen basierend auf Deinen spezifischen Anforderungen. ](http://premium.wpmudev.org/wp-content/uploads/2011/08/display-settings-735x470-700x447.jpg)
+![Unglaubliche, einfache Steuerelemente für die Anzeige von Anzeigen basierend auf Deinen spezifischen Anforderungen. ](images/display-settings-735x470-700x447.jpg)
 
   Unglaubliche, einfache Steuerelemente zum Anzeigen von Anzeigen basierend auf Deinen spezifischen Anforderungen.
 
@@ -22,7 +22,7 @@ PS BeitragsAds verwendet genau die richtige Menge an Pop, ohne Deinen Inhalt zu 
 
 Füge Anzeigen dort ein, wo Du möchteat, nach dem Zufallsprinzip oder in einer vordefinierten Reihenfolge. Löse die Anzeige mithilfe von Kategorien, Tags und Beitragstypen aus. Schalte Anzeigen direkt bei der Veröffentlichung eines Beitrags oder erst, nachdem er einige Tage online war.
 
-![Vermarkte wie ein Profi mit integrierten A/B-Tests.](http://premium.wpmudev.org/wp-content/uploads/2011/08/A-B-testing-735x470.jpg)
+![Vermarkte wie ein Profi mit integrierten A/B-Tests.](images/A-B-testing-735x470.jpg)
 
   Vermarkte wie ein Profi mit integrierten A/B-Tests.
 
@@ -45,9 +45,9 @@ Generiere mehr Umsatz und steigere den Umsatz, indem Du mit PS BeitragsAds autom
 
 4\. Melde Dich bei Deinem Admin-Panel für WordPress oder Multisite an und aktiviere das Plugin:
 
-* Bei regulären WordPress-Installationen – besuche **Plugins** und **aktivieren** das Plugin.
+* Bei regulären WordPress-Installationen – besuche **Plugins** und **aktiviere** das Plugin.
 * Für WordPress-Multisite-Installationen – Aktiviere es **Site für Site** unter **Plugins** im Site-Admin-Dashboard (z. B. wenn Du es zu einem Supporter-Premium-Plugin machen möchtest) oder besuche **Netzwerkadministration -> Plugins** und **Netzwerk Aktiviere** das Plugin.
 
 5\. Gehe nach der Aktivierung zum PS-BeitragsAds-Menü, um die Einstellungen anzupassen.
 
-![PS BeitragsAds-Einstellungen](https://premium.wpmudev.org/wp-content/uploads/2011/08/inpost-add-new.png)
+![PS BeitragsAds-Einstellungen](images/inpost-add-new.png)

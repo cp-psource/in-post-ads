@@ -466,11 +466,11 @@ msgid "Beitrag Metabox anzeigen"
 msgstr ""
 
 #: lib/class_wdca_admin_pages.php:103
-msgid "Verbinde Beitragskategorien"
+msgid "Verknüpfe Beitragskategorien"
 msgstr ""
 
 #: lib/class_wdca_admin_pages.php:104
-msgid "Verbinde Beitrags-Tags"
+msgid "Verknüpfe Beitrags-Tags"
 msgstr ""
 
 #: lib/class_wdca_admin_pages.php:105
