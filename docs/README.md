@@ -2,15 +2,6 @@
 
 Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
 
-## Menü
-
-- [Home](#ps-post-ads)
-- [Downloads](https://github.com/cp-psource/ps-post-ads/releases)
-- [Docs](https://github.com/cp-psource/ps-post-ads/wiki)
-- [Support](https://github.com/cp-psource/ps-post-ads/discussions)
-- [Kontakt](https://github.com/cp-psource)
-- [Bug Report](https://github.com/cp-psource/ps-post-ads/issues)
-
 <div style="display: flex; justify-content: space-around; background-color: #f3f3f3; padding: 10px; border-radius: 5px;">
 
   <a href="#ps-post-ads" style="text-decoration: none; color: #0366d6; font-weight: bold;">Home</a>
