@@ -2,6 +2,27 @@
 
 Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.
 
+## Menü
+
+- [Home](#ps-post-ads)
+- [Downloads](https://github.com/cp-psource/ps-post-ads/releases)
+- [Docs](https://github.com/cp-psource/ps-post-ads/wiki)
+- [Support](https://github.com/cp-psource/ps-post-ads/discussions)
+- [Kontakt](https://github.com/cp-psource)
+- [Bug Report](https://github.com/cp-psource/ps-post-ads/issues)
+
+## Downloads
+Hier findest du die Downloads.
+
+## Docs
+Hier sind die Dokumentationen.
+
+## Support
+Informationen zum Support.
+
+## Kontakt
+Wie du mich erreichen kannst.
+
 ## PS BeitragsAds platziert Anzeigen dort, wo Nutzer am meisten mit Ihren Inhalten interagieren.
 
 Besucher können für Banner- und Seitenleistenwerbung blind sein. PS BeitragsAds löst dieses Problem, indem es unauffällige Anzeigen in den Inhalt Deiner Webseite einfügt.
@@ -37,17 +58,7 @@ Generiere mehr Umsatz und steigere den Umsatz, indem Du mit PS BeitragsAds autom
 
 ### **Installieren:**
 
-1\. Lade die Plugin-Datei herunter
-
-2\. Entpacke die Datei in einen Ordner auf Deiner Festplatte
-
-3\. Lade den Ordner **_/custom-ads/_** und seinen gesamten Inhalt in den Ordner **/wp-content/plugins/** auf Deiner Webseite hoch
-
-4\. Melde Dich bei Deinem Admin-Panel für WordPress oder Multisite an und aktiviere das Plugin:
-
-* Bei regulären WordPress-Installationen – besuche **Plugins** und **aktiviere** das Plugin.
-* Für WordPress-Multisite-Installationen – Aktiviere es **Site für Site** unter **Plugins** im Site-Admin-Dashboard (z. B. wenn Du es zu einem Supporter-Premium-Plugin machen möchtest) oder besuche **Netzwerkadministration -> Plugins** und **Netzwerk Aktiviere** das Plugin.
-
-5\. Gehe nach der Aktivierung zum PS-BeitragsAds-Menü, um die Einstellungen anzupassen.
+- Gehe nach der Aktivierung zum PS-BeitragsAds-Menü, um die Einstellungen anzupassen.
 
 ![PS BeitragsAds-Einstellungen](images/inpost-add-new.png)
+
