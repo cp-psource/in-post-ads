@@ -308,7 +308,7 @@ class Wdca_AdminFormRenderer {
 			root.show();
 		}
 		
-		$("#wdca_categories").change(toggle_ads_to_cats);
+		$("#wdca_categories").on('change', toggle_ads_to_cats);
 		toggle_ads_to_cats();
 		
 		});
@@ -360,7 +360,7 @@ class Wdca_AdminFormRenderer {
 			root.show();
 		}
 		
-		$("#wdca_tags").change(toggle_ads_to_tags);
+		$("#wdca_tags").on('change', toggle_ads_to_tags);
 		toggle_ads_to_tags();
 		
 		});

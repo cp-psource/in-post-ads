@@ -161,7 +161,7 @@ class Wdca_AdminPages {
 	public function add_meta_boxes () {
 		add_meta_box(
 			'wdca_prevent_ad_insertion',
-			__('Beitragsanzeigen', 'wdca'),
+			__('Anzeigen', 'wdca'),
 			array($this, 'render_prevent_ad_box'),
 			'post',
 			'side',
