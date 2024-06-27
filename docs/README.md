@@ -49,5 +49,5 @@ Generiere mehr Umsatz und steigere den Umsatz, indem Du mit PS BeitragsAds autom
 
 - Gehe nach der Aktivierung zum PS-BeitragsAds-Menü, um die Einstellungen anzupassen.
 
-![PS BeitragsAds-Einstellungen](images/inpost-add-new.png)
+![PS BeitragsAds-Einstellungen](images/inpost-add-new.jpg)
 
