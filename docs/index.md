@@ -6,8 +6,8 @@ title: "PS BeitragsAds"
 <h2 align="center" style="color:#38c2bb;">📚 PS BeitragsAds</h2>
 
 <div class="menu">
-  <a href="https://github.com/cp-psource/e-newsletter/discussions" style="color:#38c2bb;">💬 Forum</a>
-  <a href="https://github.com/cp-psource/e-newsletter/releases" style="color:#38c2bb;">📝 Download</a>
+  <a href="https://github.com/cp-psource/in-post-ads/discussions" style="color:#38c2bb;">💬 Forum</a>
+  <a href="https://github.com/cp-psource/in-post-ads/releases" style="color:#38c2bb;">📝 Download</a>
 </div>
 
 Definiere benutzerdefinierte Werbeanzeigen für Beitragstypen und mehr, das einfachste Werkzeug um effektiv Werbeanzeigen zu schalten.

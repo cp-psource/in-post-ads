@@ -2,7 +2,7 @@
 Contributors: DerN3rd (PSOURCE)
 Tags: multisite, ads, in-post, werbung, classicpress-plugin
 Requires at least: 4.9
-Tested up to: 6.5.5
+Tested up to: 6.8.1
 Stable tag: 1.6.2
 Requires PHP: 7.0
 License: GPLv2 or later
