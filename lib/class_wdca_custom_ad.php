@@ -51,10 +51,10 @@ class Wdca_CustomAd {
 	public function register_post_type () {
 		register_post_type(self::POST_TYPE, array(
 			'labels' => array(
-				'name' => __('Beitragsanzeigen', 'wdca'),
-				'singular_name' => __('Beitragsanzeige', 'wdca'),
-				'add_new_item' => __('Neue Beitragsanzeige', 'wdca'),
-				'edit_item' => __('Bearbeite Beitragsanzeige', 'wdca'),
+				'name' => __('In Post Ads', 'wdca'),
+				'singular_name' => __('In Post Ad', 'wdca'),
+				'add_new_item' => __('Add new In Post Ad', 'wdca'),
+				'edit_item' => __('Edit In Post Ad', 'wdca'),
 			),
 			'public' => true,
 			'supports' => array(
@@ -76,16 +76,16 @@ class Wdca_CustomAd {
 
 		register_taxonomy('wdca_ad_categories', self::POST_TYPE, array(
 			'labels' => array(
-				'name' => __('Anzeigenkategorie', 'wdca'),
-				'singular_name' => __('Anzeigekategorie', 'wdca'),
-				'add_new_item' => __('Erstelle Anzeigekategorie', 'wdca'),
-				'edit_item' => __('Bearbeite Anzeigenkategorie', 'wdca'),
-				'search_items' => __('Anzeigenkategorien durchsuchen', 'wdca'),
-				'popular_items' => __('Beliebte Anzeigenkategorien', 'wdca'),
-				'all_items' => __('Alle Anzeigenkategorien', 'wdca'),
-				'separate_items_with_commas' => __('Anzeigenkategorien durch Kommas trennen', 'wdca'),
-				'add_or_remove_items' => __('Anzeigenkategorien hinzufügen oder entfernen', 'wdca'),
-				'choose_from_most_used' => __('Häufig verwendete Anzeigekategorien', 'wdca'),
+				'name' => __('Ad Categories', 'wdca'),
+				'singular_name' => __('Ad Category', 'wdca'),
+				'add_new_item' => __('Add new Ad Category', 'wdca'),
+				'edit_item' => __('Edit Ad Category', 'wdca'),
+				'search_items' => __('Search Ad Categories', 'wdca'),
+				'popular_items' => __('Popular Ad Categories', 'wdca'),
+				'all_items' => __('All Ad Categories', 'wdca'),
+				'separate_items_with_commas' => __('Separate Ad Categories with commas', 'wdca'),
+				'add_or_remove_items' => __('Add or remove Ad Categories', 'wdca'),
+				'choose_from_most_used' => __('Choose from most used Ad Categories', 'wdca'),
 			),
 			'public' => true,
 			'show_in_nav_menus' => false,
@@ -97,7 +97,7 @@ class Wdca_CustomAd {
 
 	public function add_custom_columns ($cols) {
 		return array_merge($cols, array(
-			'ad_categories' => __('Anzeigenkategorien', 'wdca'),
+			'ad_categories' => __('Ad Categories', 'wdca'),
 		));
 	}
 
@@ -110,7 +110,7 @@ class Wdca_CustomAd {
 	public function add_meta_boxes () {
 		add_meta_box(
 			'wdca_plugin_link',
-			__('Anzeigenlink', 'wdca'),
+			__('Ad link', 'wdca'),
 			array($this, 'render_link_box'),
 			self::POST_TYPE,
 			'side',
@@ -118,7 +118,7 @@ class Wdca_CustomAd {
 		);
 		add_meta_box(
 			'wdca_ad_appearance',
-			__('Anzeigendarstellung', 'wdca'),
+			__('Ad appearance', 'wdca'),
 			array($this, 'render_appearance_box'),
 			self::POST_TYPE,
 			'side',
@@ -133,52 +133,41 @@ class Wdca_CustomAd {
 		echo "<input type='text' name='wdca_plugin_url' id='wdca_plugin_url' class='widefat' value='{$link}' /></p>";
 	}
 
-	public function render_appearance_box() {
+	public function render_appearance_box () {
 		global $post;
 		$appearance = get_post_meta($post->ID, 'wdca_appearance', true);
-	
-		// Überprüfen, ob $appearance ein Array ist
-		if (is_array($appearance)) {
-			$title = isset($appearance['hide_title']) && $appearance['hide_title'] ? 'checked="checked"' : '';
-			$body = isset($appearance['hide_body']) && $appearance['hide_body'] ? 'checked="checked"' : '';
-			$footer = isset($appearance['hide_footer']) && $appearance['hide_footer'] ? 'checked="checked"' : '';
-			$strip_class = isset($appearance['strip_class']) && $appearance['strip_class'] ? 'checked="checked"' : '';
-		} else {
-			// Wenn $appearance keine Array ist, setzen Sie die Werte auf Standardwerte oder leere Zeichenfolgen
-			$title = '';
-			$body = '';
-			$footer = '';
-			$strip_class = '';
-		}
-	
+		$title = @$appearance['hide_title'] ? 'checked="checked"' : '';
+		$body = @$appearance['hide_body'] ? 'checked="checked"' : '';
+		$footer = @$appearance['hide_footer'] ? 'checked="checked"' : '';
+		$strip_class = @$appearance['strip_class'] ? 'checked="checked"' : '';
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[hide_title]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_title]' id='wdca_appearance-hide_title' value='1' {$title} /> " .
-			'<label for="wdca_appearance-hide_title">' . __('Titel nicht anzeigen', 'wdca') . '</label>' .
-			'</p>';
+			'<label for="wdca_appearance-hide_title">' . __('Do not show title', 'wdca') . '</label>' .
+		'</p>';
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[hide_body]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_body]' id='wdca_appearance-hide_body' value='1' {$body} /> " .
-			'<label for="wdca_appearance-hide_body">' . __('Inhalt nicht anzeigen', 'wdca') . '</label>' .
-			'</p>';
-		echo '<p>' .
+			'<label for="wdca_appearance-hide_body">' . __('Do not show content', 'wdca') . '</label>' .
+		'</p>';
+		echo '<p>'.
 			'<input type="hidden" name="wdca_appearance[hide_footer]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[hide_footer]' id='wdca_appearance-hide_footer' value='1' {$footer} /> " .
-			'<label for="wdca_appearance-hide_footer">' . __('Footer nicht anzeigen', 'wdca') . '</label>' .
-			'</p>';
+			'<label for="wdca_appearance-hide_footer">' . __('Do not show footer', 'wdca') . '</label>' .
+		'</p>';
 		echo '<p>' .
 			'<input type="hidden" name="wdca_appearance[strip_class]" value="0" />' .
 			"<input type='checkbox' name='wdca_appearance[strip_class]' id='wdca_appearance-strip_class' value='1' {$strip_class} /> " .
-			'<label for="wdca_appearance-strip_class">' . __('Standardstil entfernen', 'wdca') . '</label>' .
-			'</p>';
-	}	
+			'<label for="wdca_appearance-strip_class">' . __('Strip default style', 'wdca') . '</label>' .
+		'</p>';
+	}
 
 	public function save_ad_meta () {
 		global $post;
-		if (isset($_POST['wdca_plugin_url'])) {
+		if (@$_POST['wdca_plugin_url']) {
 			update_post_meta($post->ID, "wdca_plugin_url", $_POST["wdca_plugin_url"]);
 		}
-		if (isset($_POST['wdca_appearance'])) {
+		if (@$_POST['wdca_appearance']) {
 			update_post_meta($post->ID, "wdca_appearance", $_POST["wdca_appearance"]);
 		}
 	}
@@ -395,8 +384,7 @@ class Wdca_CustomAd {
 		add_action($hook, array($this, 'include_frontend_stylesheet'), 18);
 		add_action($hook, array($this, 'include_frontend_javascript'), 19);
 
-		//define('WDCA_FLAG_LATE_INCLUSION_BOUND', true, true);
-		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true);
+		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true, true);
 	}
 
 	public static function get_root_prefix () {

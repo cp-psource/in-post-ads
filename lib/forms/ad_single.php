@@ -1,4 +1,5 @@
 <?php
+	$link_target = isset($appearance['link_target']) ? $appearance['link_target'] : '_blank'; // Hier setzen wir einen Standardwert
 	$link = get_post_meta($ad->ID, 'wdca_plugin_url', true);
 	$link = $link ? $link : '#';
 	if (preg_match('/^www\./', $link)) $link = esc_url($link);

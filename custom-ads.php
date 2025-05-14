@@ -9,7 +9,7 @@ Author URI: https://github.com/cp-psource
 Text Domain: wdca
 
 
-Copyright 2020-2024 PSOURCE (https://github.com/cp-psource)
+Copyright 2020-2025 PSOURCE (https://github.com/cp-psource)
 Author - DerN3rd (PSOURCE)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
@@ -32,9 +32,9 @@ require 'psource/psource-plugin-update/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
  
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/cp-psource/ps-post-ads',
+	'https://github.com/cp-psource/in-post-ads',
 	__FILE__,
-	'ps-post-ads'
+	'in-post-ads'
 );
  
 //Set the branch that contains the stable release.
