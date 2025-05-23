@@ -1,47 +1,51 @@
 <?php
 class Wdca_AdminFormRenderer {
 
-	private $_mode_prefix;
+    private $_mode_prefix;
 
-	public function __construct ($mode) {
-		if (Wdca_Data::AB_MODE_KEY == $mode) $this->_mode_prefix = Wdca_Data::AB_MODE_KEY;
-		else $this->_mode_prefix = Wdca_Data::get_valid_key($mode);
-	}
+    public function __construct($mode) {
+        if (Wdca_Data::AB_MODE_KEY == $mode) $this->_mode_prefix = Wdca_Data::AB_MODE_KEY;
+        else $this->_mode_prefix = Wdca_Data::get_valid_key($mode);
+    }
 
-	function _get_option ($key=false) {
-		$opts = get_option($this->_mode_prefix);
-		if (!$key) return $opts;
-		return @$opts[$key];
-	}
+    function _get_option($key = false) {
+        $opts = get_option($this->_mode_prefix);
+        if (!$key) return $opts;
+        return isset($opts[$key]) ? $opts[$key] : '';
+    }
 
-	function _create_checkbox ($name) {
-		$pfx = $this->_mode_prefix;
-		$opt = $this->_get_option($name);
-		$value = is_array($opt) ? @$opt[$name] : null;
-		return
-			"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' " . ((int)$value ? 'checked="checked" ' : '') . " /> " .
-				"<label for='{$name}-yes'>" . __('Yes', 'wdca') . "</label>" .
-			'&nbsp;' .
-			"<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' " . (!(int)$value ? 'checked="checked" ' : '') . " /> " .
-				"<label for='{$name}-no'>" . __('No', 'wdca') . "</label>" .
-		"";
-	}
+    function _create_checkbox($name) {
+        $pfx = $this->_mode_prefix;
+        $opt = $this->_get_option();
+        $value = isset($opt[$name]) ? $opt[$name] : '';
 
-	function _create_textbox ($name) {
-		$pfx = $this->_mode_prefix;
-		$value = (int)esc_attr($this->_get_option($name));
-		return "<input type='text' size='2' maxsize='4' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />";
-	}
+        $yesChecked = ((int)$value === 1) ? 'checked="checked"' : '';
+        $noChecked = ((int)$value === 0) ? 'checked="checked"' : '';
 
-	function _create_text_inputbox ($name, $label, $help='', $pfx='wdca') {
-		$pfx = $this->_mode_prefix;
-		$value = esc_attr($this->_get_option($name));
-		if ($help) $help = "<div><small>{$help}</small></div>";
-		return
-			"<label for='{$pfx}-{$name}'>{$label}</label> " .
-			"<input type='text' class='widefat' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />" .
-		$help;
-	}
+        $html = "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-yes' value='1' {$yesChecked} /> " .
+            "<label for='{$name}-yes'>" . __('Ja', 'wdca') . "</label>" .
+            '&nbsp;' .
+            "<input type='radio' name='{$pfx}[{$name}]' id='{$name}-no' value='0' {$noChecked} /> " .
+            "<label for='{$name}-no'>" . __('Nein', 'wdca') . "</label>";
+
+        return $html;
+    }
+
+    function _create_textbox($name) {
+        $pfx = $this->_mode_prefix;
+        $value = (int)esc_attr($this->_get_option($name));
+        return "<input type='text' size='2' maxsize='4' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />";
+    }
+
+    function _create_text_inputbox($name, $label, $help = '', $pfx = 'wdca') {
+        $pfx = $this->_mode_prefix;
+        $value = esc_attr($this->_get_option($name));
+        if ($help) $help = "<div><small>{$help}</small></div>";
+        return
+            "<label for='{$pfx}-{$name}'>{$label}</label> " .
+            "<input type='text' class='widefat' name='{$pfx}[{$name}]' id='{$pfx}-{$name}' value='{$value}' />" .
+            $help;
+    }
 
 	function _create_radiobox ($name, $value) {
 		$pfx = $this->_mode_prefix;
@@ -56,21 +60,21 @@ class Wdca_AdminFormRenderer {
 
 	function create_live_mode_box () {
 		echo $this->_create_checkbox('live_mode');
-		echo '<div><small>' . __('Disabling this will only show your ads to logged in users', 'wdca') . '</small></div>';
-		echo '<div>' . __('Do NOT turn this on until you are ready to go live', 'wdca') . '</div>';
+		echo '<div><small>' . __('Wenn Du diese Option deaktivierst, werden Deine Anzeigen nur angemeldeten Nutzern angezeigt', 'wdca') . '</small></div>';
+		echo '<div>' . __('Schalte dies NICHT ein, bis Du bereit bist, live zu gehen', 'wdca') . '</div>';
 	}
 
 	function create_ad_count_box () {
 		echo $this->_create_textbox('ad_count');
-		echo '<div><small>' . __('This many Ads will be shown per post page', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('So viele Anzeigen werden pro Beitragsseite geschaltet', 'wdca') . '</small></div>';
 	}
 
 	function create_ad_order_box () {
 		$orders = array(
-			'rand' => __('Random', 'wdca'),
-			'title' => __('Title', 'wdca'),
-			'date' => __('Date', 'wdca'),
-			'modified' => __('Modified', 'wdca'),
+			'rand' => __('Zufällig', 'wdca'),
+			'title' => __('Titel', 'wdca'),
+			'date' => __('Datum', 'wdca'),
+			'modified' => __('Bearbeitet', 'wdca'),
 		);
 		$bys = array('ASC', 'DESC');
 
@@ -92,78 +96,78 @@ class Wdca_AdminFormRenderer {
 		}
 		echo '</select>';
 
-		echo '<div><small>' . __('Your Ads will be ordered in the way you set up here', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Deine Anzeigen werden so bestellt, wie Du sie hier eingerichtet hast', 'wdca') . '</small></div>';
 	}
 
 	function create_p_first_count_box () {
 		echo $this->_create_textbox('p_first_count');
-		echo '<div><small>' . __('Your first Ad will be injected in your post after this many paragraphs.', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Deine erste Anzeige wird nach so vielen Absätzen in den Beitrag eingefügt.', 'wdca') . '</small></div>';
 	}
 	function create_p_count_box () {
 		echo $this->_create_textbox('p_count');
-		echo '<div><small>' . __('Your subsequent Ads will be injected in your post every [number] of paragraphs.', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Deine nachfolgenden Anzeigen werden alle [Anzahl] Absätze in den Beitrag eingefügt.', 'wdca') . '</small></div>';
 	}
 
 	function create_ad_show_after_box () {
 		$predefined_delays = array(1,5) + range(5, 30, 5);
 		$delay = $this->_get_option('ad_delay');
 		$select = '<select name="' . $this->_mode_prefix . '[ad_delay]">';
-		$select .= '<option value="">' . __('immediately', 'wdca') . '</option>';
+		$select .= '<option value="">' . __('sofort', 'wdca') . '</option>';
 		foreach ($predefined_delays as $count) {
 			$selected = $count == $delay ? 'selected="selected"' : '';
 			$label = $count != 1 
-				? sprintf(__('%d days', 'wdca'), $count)
-				: sprintf(__('%d day', 'wdca'), $count)
+				? sprintf(__('%d Tage', 'wdca'), $count)
+				: sprintf(__('%d Tag', 'wdca'), $count)
 			;
 			$select .= "<option value='{$count}' {$selected}>{$label}</option>";
 		}
 		$select .= '</select>';
-		echo '<label>' . sprintf(__('Show my Ads %s after the post gets published', 'wdca'), $select) . '</label>';
-		echo '<div><small>' . __('Use this option to delay automatic Ads injection for a selected time period.', 'wdca') . '</small></div>';
+		echo '<label>' . sprintf(__('Meine Anzeigen %s anzeigen, nachdem der Beitrag veröffentlicht wurde', 'wdca'), $select) . '</label>';
+		echo '<div><small>' . __('Verwende diese Option, um die automatische Anzeigeninjektion für einen ausgewählten Zeitraum zu verzögern.', 'wdca') . '</small></div>';
 	}
 
 	function create_predefined_positions_box () {
 		echo '' .
-			__('Before first paragraph:', 'wdca') .
+			__('Vor dem ersten Absatz:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('predefined_before_first_p') .
-			'<div><small>' . __('Enabling this option will insert your first Ad at the very begining of your post', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Wenn Du diese Option aktivierst, wird Deine erste Anzeige ganz am Anfang des Beitrags eingefügt', 'wdca') . '</small></div>' .
 		'<br />';
 		echo '' .
-			__('Halway through your post:', 'wdca') .
+			__('Auf halbem Weg durch den Beitrag:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('predefined_halfway_through') .
-			'<div><small>' . __('Enabling this option will insert an Ad halway through your post', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Durch Aktivieren dieser Option wird eine Anzeige in der Mitte des Beitrags eingefügt', 'wdca') . '</small></div>' .
 		'<br />';
 		echo '' .
-			__('After last paragraph:', 'wdca') .
+			__('Nach dem letzten Absatz:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('predefined_after_last_p') .
-			'<div><small>' . __('Enabling this option will insert your first Ad at the very end of your post', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Wenn Du diese Option aktivierst, wird die erste Anzeige ganz am Ende des Beitrags eingefügt', 'wdca') . '</small></div>' .
 		'<br />';
 
 		$ps = (int)$this->_get_option('predefined_ignore_other-paragraph_count');
 		$paragraphs = "<input type='text' name='{$this->_mode_prefix}[predefined_ignore_other-paragraph_count]' size='2' value='{$ps}' />";
 		echo '' .
-			__('Ignore other injection settings:', 'wdca') .
+			__('Ignoriere andere Einfügungseinstellungen:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('predefined_ignore_other') .
-			'<div><small>' . __('Enabling this option will ignore other injection settings and insert your Ads at the selected predefined settings only', 'wdca') . '</small></div>' .
-			sprintf(__('... but only on posts longer than %s paragraphs', 'wdca'), $paragraphs) .
-			'<div><small>' . __('If your posts are shorter than the number of paragraphs entered here, the default behavior will take precedence over the predefined positions injection.', 'wdca') . '</small></div>' .
-			'<div><small>' . __('Leave the value at <code>0</code> to disable this behavior.', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Wenn Du diese Option aktivierst, werden andere infügungseinstellungen ignoriert und Ihre Anzeigen werden nur mit den ausgewählten vordefinierten Einstellungen eingefügt', 'wdca') . '</small></div>' .
+			sprintf(__('... aber nur für Beiträge, die länger als %s Absätze sind', 'wdca'), $paragraphs) .
+			'<div><small>' . __('Wenn Beiträge kürzer als die hier eingegebene Anzahl von Absätzen sind, hat das Standardverhalten Vorrang vor der vordefinierten Positionsinjektion.', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Lasse den Wert auf <code>0</code> um dieses Verhalten zu deaktivieren.', 'wdca') . '</small></div>' .
 		'<br />';
 	}
 
 	function create_theme_box () {
 		$themes = array(
-			'' => __('Default', 'wdca'),
-			'wpmu' => __('WPMU.org', 'wdca'),
-			'dark' => __('Dark', 'wdca'),
-			'dotted' => __('Dotted', 'wdca'),
-			'greenbutton' => __('Green Button', 'wdca'),
-			'wpmu2013' => __('wpmu.org 2013', 'wdca'),
-			'paper' => __('Paper (modern browsers only)', 'wdca'),
+			'' => __('Standard', 'wdca'),
+			'wpmu' => __('PSOURCE', 'wdca'),
+			'dark' => __('Dunkel', 'wdca'),
+			'dotted' => __('Gepunktet', 'wdca'),
+			'greenbutton' => __('Grüner Knopf', 'wdca'),
+			'wpmu2013' => __('PSOURCE 2018', 'wdca'),
+			'paper' => __('Papier (nur moderne Browser)', 'wdca'),
 			//'alex' => __('Alex', 'wdca'),
 		);
 		$current = $this->_get_option('theme');
@@ -177,25 +181,25 @@ class Wdca_AdminFormRenderer {
 	}
 
 	function create_messages_box () {
-		echo $this->_create_text_inputbox('msg_header', __('Header text', 'wdca'), __('This text will appear in your Ad header, before the link', 'wdca'));
-		echo $this->_create_text_inputbox('msg_footer', __('Footer text', 'wdca'), __('This text will appear below your Ad content, before the link', 'wdca'));
-		echo $this->_create_text_inputbox('msg_link', __('Footer link text', 'wdca'), __('This text will appear as link text in your footer', 'wdca'));
+		echo $this->_create_text_inputbox('msg_header', __('Headertext', 'wdca'), __('Dieser Text wird in der Anzeigenüberschrift vor dem Link angezeigt', 'wdca'));
+		echo $this->_create_text_inputbox('msg_footer', __('Footertext', 'wdca'), __('Dieser Text wird unter dem Anzeigeninhalt vor dem Link angezeigt', 'wdca'));
+		echo $this->_create_text_inputbox('msg_link', __('Footerlinktext', 'wdca'), __('Dieser Text wird als Linktext in der Fußzeile angezeigt', 'wdca'));
 	}
 
 	function create_link_box () {
 		echo $this->_create_radiobox('link_target', '') .
 			'&nbsp;' .
-			'<label for="link_target-">' . __('Opens in current window/tab', 'wdca') . '</label>' .
+			'<label for="link_target-">' . __('Wird im aktuellen Fenster/Tab geöffnet', 'wdca') . '</label>' .
 		'<br />';
 		echo $this->_create_radiobox('link_target', 'blank') .
 			'&nbsp;' .
-			'<label for="link_target-blank">' . __('Opens in new window/tab', 'wdca') . '</label>' .
+			'<label for="link_target-blank">' . __('Öffnet in neuem Fenster/Tab', 'wdca') . '</label>' .
 		'';
 	}
 
 	function create_ga_setup_box () {
 		echo '<p><i>' .
-			__('<b>Note:</b> your pages need to already be set up for Google Analytics tracking for this to work properly.', 'wdca') .
+			__('<b>Hinweis:</b> Deine Seite muss bereits für das Google Analytics-Tracking eingerichtet sein, damit dies ordnungsgemäß funktioniert.', 'wdca') .
 		'</i></p>';
 	}
 
@@ -208,14 +212,14 @@ class Wdca_AdminFormRenderer {
 		$value = esc_attr((
 			$value
 				? $value
-				: 'In Post Ads'
+				: 'BeitragsAds'
 		));
 		echo "<input type='text' name='{$this->_mode_prefix}[ga_category]' value='{$value}' class='regular-text' />";
 	}
 
 	function create_ga_label_box () {
 		$value = $this->_get_option('ga_label');
-		if (!$value) $value = Wdca_Data::DEFAULT_KEY == $this->_mode_prefix ? 'Default' : 'Group B';
+		if (!$value) $value = Wdca_Data::DEFAULT_KEY == $this->_mode_prefix ? 'Standard' : 'Group B';
 		$value = esc_attr($value);
 		echo "<input type='text' name='{$this->_mode_prefix}[ga_label]' value='{$value}' class='regular-text' />";
 	}
@@ -224,8 +228,8 @@ class Wdca_AdminFormRenderer {
 		$selector = $this->_get_option('selector');
 		$selector = $selector ? $selector : '>p';
 		echo "<input type='text' name='{$this->_mode_prefix}[selector]' id='wdca-selector' value='{$selector}' class='widefat' />" .
-			'<div><small>' . __('If you are experiencing problems with your theme, you may want to change the default selector to something more generic - e.g. <code>p</code>', 'wdca') . '</small></div>' .
-			'<div><small>' . __('You can also use this box to allow Ad inserting after other elements too - e.g. <code>ul,ol,p</code>', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Wenn Du Probleme mit Deinem Theme hast, kannst Du den Standard-Selektor auf einen allgemeineren ändern - z.B. <code>p</code>', 'wdca') . '</small></div>' .
+			'<div><small>' . __('Du kannst dieses Feld auch verwenden, um das Einfügen von Anzeigen nach anderen Elementen zu ermöglichen - z.B. <code>ul,ol,p</code>', 'wdca') . '</small></div>' .
 		'';
 	}
 
@@ -246,19 +250,19 @@ class Wdca_AdminFormRenderer {
 			echo "<option value='{$key}' {$selected}>{$label}</option>";
 		}
 		echo '</select>';
-		echo '<div><small>' . __('The plugin will auto-insert Ads into your Posts by default. Select additional post types here.', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Das Plugin fügt standardmäßig automatisch Anzeigen in Deine Beiträge ein. Wähle hier weitere Beitragstypen aus.', 'wdca') . '</small></div>';
 
 		echo '' .
-			'<label for="cpt_skip_posts-yes">' . __('Do not auto-inject into posts:', 'wdca') . '</label>&nbsp;' .
+			'<label for="cpt_skip_posts-yes">' . __('Nicht automatisch in Beiträge injizieren:', 'wdca') . '</label>&nbsp;' .
 			$this->_create_checkbox('cpt_skip_posts') .
 		'';
 
-		echo '<div><small>' . __('These settings apply to auto-insertion only - you will still be able to insert the Ads using shortcodes.', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Diese Einstellungen gelten nur für das automatische Einfügen. Du kannst die Anzeigen weiterhin mithilfe von Shortcodes einfügen.', 'wdca') . '</small></div>';
 	}
 
 	function create_post_metabox_box () {
 		echo $this->_create_checkbox('post_metabox');
-		echo '<div><small>' . __('Enabling this option will add a metabox to your post editor interface, which you can use to prevent Ad insertion per post.', 'wdca') . '</small></div>';
+		echo '<div><small>' . __('Durch Aktivieren dieser Option wird der Beitrags-Editor-Oberfläche eine Metabox hinzugefügt, mit der Du das Einfügen von Anzeigen pro Beitrag verhindern kannst.', 'wdca') . '</small></div>';
 	}
 
 	function create_categories_box () {
@@ -286,31 +290,31 @@ class Wdca_AdminFormRenderer {
 
 		//echo $cat_str . $ad_str;
 		echo '<table class="widefat">';
-		echo '<thead><tr><th>' . __('My posts within this Category', 'wdca') . '&hellip;</th><th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th></tr></thead>';
+		echo '<thead><tr><th>' . __('Meine Beiträge in dieser Kategorie', 'wdca') . '&hellip;</th><th>&hellip;' . __('zeigt nur Anzeigen aus diesen Anzeigenkategorien an', 'wdca') . '</th></tr></thead>';
 		echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
 		echo "<tbody><tr><td>{$cat_str}</td><td>{$ad_str}</td></tr></tbody>";
 		echo '</table>';
-		_e('If you do not set any mappings here, any Ad could appear in any of your posts.', 'wdca');
+		_e('Wenn Du hier keine Zuordnungen festlegst, kann jede Anzeige in einem der Beiträge erscheinen.', 'wdca');
 		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_cats () {
-	var cat = $("#wdca_categories").val();
-	var root = $("#wdca_ads_to-cat-" + cat);
-	if (!root.length) return false;
-	$(".wdca_ads_to_cat").hide();
-	root.show();
-}
-
-$("#wdca_categories").change(toggle_ads_to_cats);
-toggle_ads_to_cats();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
+		<script type="text/javascript">
+		(function ($) {
+		$(function () {
+		
+		function toggle_ads_to_cats () {
+			var cat = $("#wdca_categories").val();
+			var root = $("#wdca_ads_to-cat-" + cat);
+			if (!root.length) return false;
+			$(".wdca_ads_to_cat").hide();
+			root.show();
+		}
+		
+		$("#wdca_categories").on('change', toggle_ads_to_cats);
+		toggle_ads_to_cats();
+		
+		});
+		})(jQuery);
+		</script>
+		EOMappingJs;
 	}
 
 	function create_tags_box () {
@@ -338,66 +342,66 @@ EOMappingJs;
 
 		//echo $cat_str . $ad_str;
 		echo '<table class="widefat">';
-		echo '<thead><tr><th>' . __('My posts within this Tag', 'wdca') . '&hellip;</th><th>&hellip;' . __('will only show Ads from these Ad Categories', 'wdca') . '</th></tr></thead>';
+		echo '<thead><tr><th>' . __('Meine Beiträge in diesem Tag', 'wdca') . '&hellip;</th><th>&hellip;' . __('zeigt nur Anzeigen aus diesen Anzeigenkategorien an', 'wdca') . '</th></tr></thead>';
 		echo '<tfoot><tr><th></th><th></th></tr></tfoot>';
 		echo "<tbody><tr><td>{$tag_str}</td><td>{$ad_str}</td></tr></tbody>";
 		echo '</table>';
-		_e('If you do not set any mappings here, any Ad could appear in any of your posts.', 'wdca');
+		_e('Wenn Du hier keine Zuordnungen festlegst, kann jede Anzeige in einem der Beiträge erscheinen.', 'wdca');
 		echo <<<EOMappingJs
-<script type="text/javascript">
-(function ($) {
-$(function () {
-
-function toggle_ads_to_tags () {
-	var tag = $("#wdca_tags").val();
-	var root = $("#wdca_ads_to-tag-" + tag);
-	if (!root.length) return false;
-	$(".wdca_ads_to_tag").hide();
-	root.show();
-}
-
-$("#wdca_tags").change(toggle_ads_to_tags);
-toggle_ads_to_tags();
-
-});
-})(jQuery);
-</script>
-EOMappingJs;
+		<script type="text/javascript">
+		(function ($) {
+		$(function () {
+		
+		function toggle_ads_to_tags () {
+			var tag = $("#wdca_tags").val();
+			var root = $("#wdca_ads_to-tag-" + tag);
+			if (!root.length) return false;
+			$(".wdca_ads_to_tag").hide();
+			root.show();
+		}
+		
+		$("#wdca_tags").on('change', toggle_ads_to_tags);
+		toggle_ads_to_tags();
+		
+		});
+		})(jQuery);
+		</script>
+		EOMappingJs;
 	}
 
 	function create_lazy_loading_box () {
-		echo __('Enable lazy dependency loading:', 'wdca') .
+		echo __('Aktiviere das verzögerte Laden von Abhängigkeiten:', 'wdca') .
 			'&nbsp;' .
 			$this->_create_checkbox('enable_late_binding') .
-			'<div><small>' . __('Lazy dependency loading can improve your site load times by requiring resources as they are needed.', 'wdca') . '</small></div>'
+			'<div><small>' . __('Das verzögerte Laden von Abhängigkeiten kann die Ladezeiten Deiner Seite verbessern, indem Ressourcen nach Bedarf benötigt werden.', 'wdca') . '</small></div>'
 		;
 
 		$wdca = Wdca_CustomAd::get_instance();
 		$hook = $wdca->get_late_binding_hook();
 		echo '<br />' .
-			'<label for="wdca-late_binding_hook">' . __('Lazy loading hook <small>(advanced)</small>:', 'wdca') . '</label>&nbsp;' .
+			'<label for="wdca-late_binding_hook">' . __('Verzögertes Laden Hook <small>(fortgeschritten)</small>:', 'wdca') . '</label>&nbsp;' .
 			'<input type="text" name="' . $this->_mode_prefix . '[late_binding_hook]" id="wdca-late_binding_hook" value="' . $hook . '" />' .
-			'<div><small>' . __('Lazy dependency loading relies on footer hook to deploy properly. If your theme does not implement the default hook, use this field to set your custom one.', 'wdca') . '</small></div>'
+			'<div><small>' . __('Das verzögerte Laden von Abhängigkeiten hängt vom Fußzeilenhook ab, um ordnungsgemäß bereitgestellt zu werden. Wenn Dein Design den Standard-Hook nicht implementiert, verwende dieses Feld, um einen benutzerdefinierten festzulegen.', 'wdca') . '</small></div>'
 		;
 
-		echo '<h4>' . __('Style inclusion type', 'wdca') . '</h4>' .
+		echo '<h4>' . __('Stileinschlussart', 'wdca') . '</h4>' .
 			$this->_create_radiobox('style_inclusion_type', '') . '&nbsp;<label for="style_inclusion_type-">' . __('Normal', 'wdca') . '</label><br />' .
 			$this->_create_radiobox('style_inclusion_type', 'inline') . '&nbsp;<label for="style_inclusion_type-inline">' . __('Inline', 'wdca') . '</label><br />' .
-			$this->_create_radiobox('style_inclusion_type', 'dynamic') . '&nbsp;<label for="style_inclusion_type-dynamic">' . __('Dynamic', 'wdca') . '</label><br />' .
+			$this->_create_radiobox('style_inclusion_type', 'dynamic') . '&nbsp;<label for="style_inclusion_type-dynamic">' . __('Dynamisch', 'wdca') . '</label><br />' .
 		'';
 	}
 
 
 	function create_ab_mode_setup_box () {
 		echo '<p><i>' .
-			__('This is where you can set up your A/B testing, and settings group loading rules.', 'wdca') .
+			__('Hier kannst Du Deine A/B-Tests einrichten und die Laderegeln für Gruppen einstellen.', 'wdca') .
 		'</i></p>';
 	}
 
 	function create_sessions_box () {
 		echo $this->_create_checkbox('remember_in_session');
 		echo '<div><small>' .
-			__('By default, A/B mode distribution is random. Enabling this option will enforce initially selected mode for your users to persist accross requests (i.e. users that got A mode settings will keep seeing them, and vice versa).', 'wdca') .
+			__('Standardmäßig ist die Verteilung im A/B-Modus zufällig. Durch Aktivieren dieser Option wird der ursprünglich ausgewählte Modus für Deine Benutzer erzwungen, damit sie über Anforderungen hinweg bestehen bleiben (d. H. Benutzer, die Einstellungen für den A-Modus erhalten haben, werden diese weiterhin sehen und umgekehrt).', 'wdca') .
 		'</small></div>';
 	}
 
@@ -412,7 +416,7 @@ EOMappingJs;
 	function create_get_key_override_box () {
 		echo $this->_create_checkbox('allow_get_key_override');
 		echo '<div><small>' .
-			__('If A/B testing is enabled, allowing this option will let you test each group unconditionally, by passing this to your URL: <code>?wdca_mode=a</code> for A group settings, <code>?wdca_mode=b</code> for B group settings.', 'wdca') .
+			__('Wenn der A/B-Test aktiviert ist und Du diese Option zulässt, kannst Du jede Gruppe bedingungslos testen, indem Du dies an die URL übergibst: <code>?wdca_mode=a</code> für A Gruppen Einstellungen, <code>?wdca_mode=b</code> für B Gruppen Einstellungen.', 'wdca') .
 		'</small></div>';
 	}
 

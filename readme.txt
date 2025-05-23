@@ -3,7 +3,7 @@ Contributors: DerN3rd (PSOURCE)
 Tags: multisite, ads, in-post, werbung, classicpress-plugin
 Requires at least: 4.9
 Tested up to: 6.8.1
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,10 @@ Offer registered users an ad-free reading experience and encourage visitors to u
 [POWERED BY PSOURCE](https://github.com/cp-psource)
 
 == ChangeLog ==
+
+= 1.6.3 =
+
+* Fixed PhP 8.3
 
 = 1.6.2 =
 
