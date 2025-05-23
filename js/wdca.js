@@ -1,9 +1,11 @@
+console.log('_wdca', window._wdca);
 (function($) {
 
     function wdca_insert_ad($root, $placement, callback) {
         var $add = $root.find('.' + _wdca.pfx + 'ad_item').first();
-        $add.removeClass(_wdca.pfx + 'not_placed');
-        $placement[callback]($add);
+        if (!$add.length) return;
+        var $clone = $add.clone(true, true).removeClass(_wdca.pfx + 'not_placed');
+        $placement[callback]($clone);
     }
 
     $(function() {
