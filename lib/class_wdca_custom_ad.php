@@ -399,18 +399,11 @@ class Wdca_CustomAd {
 		define('WDCA_FLAG_LATE_INCLUSION_BOUND', true);
 	}
 
+	public static function wrap($str) {
+        return self::get_root_prefix() . "_{$str}";
+    }
+
 	public static function get_root_prefix () {
-		$data = Wdca_Data::get_options();
-		if (empty($data['style_inclusion_type'])) return 'wdca';
-
-		$full = md5(home_url() . COOKIEHASH);
-		$idx = substr(preg_replace('/\D/', '', $full), 0, 1);
-		$letters = range('a', 'z');
-		if (!preg_match('/^[a-z]/i', $full)) $full = $letters[$idx] . $full;
-		return substr($full, 0, 5);
-	}
-
-	public static function wrap ($str) {
-		return self::get_root_prefix() . "_{$str}";
-	}
+    return 'wdca';
+}
 }

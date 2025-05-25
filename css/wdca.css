@@ -4,7 +4,7 @@
  * Auto-placed Ads start initially hidden
  */
 .wdca_not_placed {
-	display: none;
+	display: none !important;
 }
 
 .wdca_default, .wdca_large {
