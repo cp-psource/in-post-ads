@@ -329,15 +329,20 @@ class Wdca_CustomAd {
 
 		$stylesheet_type = !empty($this->_data['style_inclusion_type']) ? $this->_data['style_inclusion_type'] : '';
 
-		if (!current_theme_supports('wdca')) {
-			if (empty($stylesheet_type)) wp_enqueue_style('wdca', WDCA_PLUGIN_URL . "/css/wdca.css");
-			else if ('dynamic' != $stylesheet_type) add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
-
-			if (!file_exists(WDCA_PLUGIN_BASE_DIR . "/css/wdca-{$theme}.css")) return false;
-
-			if (empty($stylesheet_type)) wp_enqueue_style('wdca-theme', WDCA_PLUGIN_URL . "/css/wdca-{$theme}.css");
-			else if ('dynamic' != $stylesheet_type) add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
+		if (empty($stylesheet_type)) {
+			wp_enqueue_style('wdca', WDCA_PLUGIN_URL . "/css/wdca.css");
+		} else if ('dynamic' != $stylesheet_type) {
+			add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
 		}
+
+		if (!file_exists(WDCA_PLUGIN_BASE_DIR . "/css/wdca-{$theme}.css")) return false;
+
+		if (empty($stylesheet_type)) {
+			wp_enqueue_style('wdca-theme', WDCA_PLUGIN_URL . "/css/wdca-{$theme}.css");
+		} else if ('dynamic' != $stylesheet_type) {
+			add_action($this->get_late_binding_hook(), array($this, 'inject_inline_styles'), 99);
+		}
+
 		define('WDCA_FLAG_STYLESHEET_LOADED', true);
 	}
 
@@ -404,6 +409,6 @@ class Wdca_CustomAd {
     }
 
 	public static function get_root_prefix () {
-    return 'wdca';
-}
+		return 'wdca';
+	}
 }
